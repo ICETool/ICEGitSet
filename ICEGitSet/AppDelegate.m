@@ -7,6 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
+#import "LeftViewController.h"
+#import "RightViewController.h"
+#import "ICEDrawerController.h"
+
+
 
 @interface AppDelegate ()
 
@@ -16,7 +22,25 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+   
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    [self.window makeKeyWindow];
+    
+    
+    LeftViewController *leftVC = [[LeftViewController alloc] init];
+    RightViewController *rightVC = [[RightViewController alloc] init];
+    MainViewController *mainVC = [[MainViewController alloc] init];
+    
+    leftVC.view.backgroundColor = [UIColor blueColor];
+    rightVC.view.backgroundColor = [UIColor greenColor];
+    mainVC.view.backgroundColor = [UIColor redColor];
+    
+    ICEDrawerController *drawVC = [[ICEDrawerController alloc] initDrawerViewControllerWithMainVC:mainVC andLeftVC:leftVC andRightVC:rightVC];
+
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:drawVC];
+    self.window.rootViewController = navi;
+    
     return YES;
 }
 
