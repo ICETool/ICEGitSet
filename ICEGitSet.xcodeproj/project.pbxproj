@@ -35,10 +35,10 @@
 		17D704881CCDFA3F009CA7C0 /* UITableView+ICEAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D7046F1CCDFA3F009CA7C0 /* UITableView+ICEAdd.m */; };
 		17D704891CCDFA3F009CA7C0 /* UIView+ICEAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D704711CCDFA3F009CA7C0 /* UIView+ICEAdd.m */; };
 		17D7048A1CCDFA3F009CA7C0 /* UIView+ICETapAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D704731CCDFA3F009CA7C0 /* UIView+ICETapAdd.m */; };
-		17D704941CCDFF4B009CA7C0 /* icon-arrowdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 17D704921CCDFF4B009CA7C0 /* icon-arrowdown.png */; };
-		17D704951CCDFF4B009CA7C0 /* icon-arrowdown-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 17D704931CCDFF4B009CA7C0 /* icon-arrowdown-active.png */; };
-		17D704AB1CCE288E009CA7C0 /* ICEPullDownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D704A81CCE288E009CA7C0 /* ICEPullDownMenuView.m */; };
-		17D704AC1CCE288E009CA7C0 /* ICESegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D704AA1CCE288E009CA7C0 /* ICESegmentView.m */; };
+		17D704D21CCE2E06009CA7C0 /* ICEPullDownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D704CD1CCE2E06009CA7C0 /* ICEPullDownMenuView.m */; };
+		17D704D31CCE2E06009CA7C0 /* ICESegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D704CF1CCE2E06009CA7C0 /* ICESegmentView.m */; };
+		17D704D41CCE2E06009CA7C0 /* icon-arrowdown-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 17D704D01CCE2E06009CA7C0 /* icon-arrowdown-active.png */; };
+		17D704D51CCE2E06009CA7C0 /* icon-arrowdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 17D704D11CCE2E06009CA7C0 /* icon-arrowdown.png */; };
 		81984AE58310718D821CC880 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 786C2EE49CD3E5CD6CF8ED2B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -99,12 +99,12 @@
 		17D704721CCDFA3F009CA7C0 /* UIView+ICETapAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ICETapAdd.h"; sourceTree = "<group>"; };
 		17D704731CCDFA3F009CA7C0 /* UIView+ICETapAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ICETapAdd.m"; sourceTree = "<group>"; };
 		17D704741CCDFA3F009CA7C0 /* YYKitMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYKitMacro.h; sourceTree = "<group>"; };
-		17D704921CCDFF4B009CA7C0 /* icon-arrowdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-arrowdown.png"; sourceTree = "<group>"; };
-		17D704931CCDFF4B009CA7C0 /* icon-arrowdown-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-arrowdown-active.png"; sourceTree = "<group>"; };
-		17D704A71CCE288E009CA7C0 /* ICEPullDownMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEPullDownMenuView.h; sourceTree = "<group>"; };
-		17D704A81CCE288E009CA7C0 /* ICEPullDownMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEPullDownMenuView.m; sourceTree = "<group>"; };
-		17D704A91CCE288E009CA7C0 /* ICESegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICESegmentView.h; sourceTree = "<group>"; };
-		17D704AA1CCE288E009CA7C0 /* ICESegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICESegmentView.m; sourceTree = "<group>"; };
+		17D704CC1CCE2E06009CA7C0 /* ICEPullDownMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEPullDownMenuView.h; sourceTree = "<group>"; };
+		17D704CD1CCE2E06009CA7C0 /* ICEPullDownMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEPullDownMenuView.m; sourceTree = "<group>"; };
+		17D704CE1CCE2E06009CA7C0 /* ICESegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICESegmentView.h; sourceTree = "<group>"; };
+		17D704CF1CCE2E06009CA7C0 /* ICESegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICESegmentView.m; sourceTree = "<group>"; };
+		17D704D01CCE2E06009CA7C0 /* icon-arrowdown-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-arrowdown-active.png"; sourceTree = "<group>"; };
+		17D704D11CCE2E06009CA7C0 /* icon-arrowdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-arrowdown.png"; sourceTree = "<group>"; };
 		457060B9782330CEE73B70D9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		786C2EE49CD3E5CD6CF8ED2B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E963485B06C9E0BC269DE8D0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				17D704451CCDFA3F009CA7C0 /* ICECategory */,
-				17D7048B1CCDFF1E009CA7C0 /* ICEPullDownMenu */,
 				17D704301CCDF40E009CA7C0 /* AppDelegate.h */,
+				17D704CB1CCE2E06009CA7C0 /* ICEPullDownMenu */,
 				17D704311CCDF40E009CA7C0 /* AppDelegate.m */,
 				17D704331CCDF40E009CA7C0 /* ViewController.h */,
 				17D704341CCDF40E009CA7C0 /* ViewController.m */,
@@ -235,18 +235,17 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
-		17D7048B1CCDFF1E009CA7C0 /* ICEPullDownMenu */ = {
+		17D704CB1CCE2E06009CA7C0 /* ICEPullDownMenu */ = {
 			isa = PBXGroup;
 			children = (
-				17D704A71CCE288E009CA7C0 /* ICEPullDownMenuView.h */,
-				17D704A81CCE288E009CA7C0 /* ICEPullDownMenuView.m */,
-				17D704A91CCE288E009CA7C0 /* ICESegmentView.h */,
-				17D704AA1CCE288E009CA7C0 /* ICESegmentView.m */,
-				17D704921CCDFF4B009CA7C0 /* icon-arrowdown.png */,
-				17D704931CCDFF4B009CA7C0 /* icon-arrowdown-active.png */,
+				17D704CC1CCE2E06009CA7C0 /* ICEPullDownMenuView.h */,
+				17D704CD1CCE2E06009CA7C0 /* ICEPullDownMenuView.m */,
+				17D704CE1CCE2E06009CA7C0 /* ICESegmentView.h */,
+				17D704CF1CCE2E06009CA7C0 /* ICESegmentView.m */,
+				17D704D01CCE2E06009CA7C0 /* icon-arrowdown-active.png */,
+				17D704D11CCE2E06009CA7C0 /* icon-arrowdown.png */,
 			);
-			name = ICEPullDownMenu;
-			path = ICECategory/ICEPullDownMenu;
+			path = ICEPullDownMenu;
 			sourceTree = "<group>";
 		};
 		B904D2ED4719882A228F7C19 /* Pods */ = {
@@ -327,9 +326,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				17D7043D1CCDF40E009CA7C0 /* LaunchScreen.storyboard in Resources */,
+				17D704D51CCE2E06009CA7C0 /* icon-arrowdown.png in Resources */,
 				17D7043A1CCDF40E009CA7C0 /* Assets.xcassets in Resources */,
-				17D704951CCDFF4B009CA7C0 /* icon-arrowdown-active.png in Resources */,
-				17D704941CCDFF4B009CA7C0 /* icon-arrowdown.png in Resources */,
+				17D704D41CCE2E06009CA7C0 /* icon-arrowdown-active.png in Resources */,
 				17D704381CCDF40E009CA7C0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,7 +398,7 @@
 				17D7047D1CCDFA3F009CA7C0 /* NSString+ICEAdd.m in Sources */,
 				17D7047C1CCDFA3F009CA7C0 /* NSObject+YYAddForKVO.m in Sources */,
 				17D704811CCDFA3F009CA7C0 /* UIBarButtonItem+ICEAdd.m in Sources */,
-				17D704AB1CCE288E009CA7C0 /* ICEPullDownMenuView.m in Sources */,
+				17D704D21CCE2E06009CA7C0 /* ICEPullDownMenuView.m in Sources */,
 				17D704871CCDFA3F009CA7C0 /* UIScrollView+ICEAdd.m in Sources */,
 				17D704351CCDF40E009CA7C0 /* ViewController.m in Sources */,
 				17D704791CCDFA3F009CA7C0 /* NSFileManager+ICEAdd.m in Sources */,
@@ -411,7 +410,7 @@
 				17D704851CCDFA3F009CA7C0 /* UIGestureRecognizer+ICEAdd.m in Sources */,
 				17D704821CCDFA3F009CA7C0 /* UIButton+ICEBlock.m in Sources */,
 				17D704761CCDFA3F009CA7C0 /* NSArray+ICEAdd.m in Sources */,
-				17D704AC1CCE288E009CA7C0 /* ICESegmentView.m in Sources */,
+				17D704D31CCE2E06009CA7C0 /* ICESegmentView.m in Sources */,
 				17D7042F1CCDF40E009CA7C0 /* main.m in Sources */,
 				17D704751CCDFA3F009CA7C0 /* Foundation+Log.m in Sources */,
 				17D7047A1CCDFA3F009CA7C0 /* NSObject+ICEAdd.m in Sources */,
