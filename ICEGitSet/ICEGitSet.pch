@@ -14,5 +14,7 @@
 
 #import "ICECategory.h"
 
+#import "Masonry.h"
+
 
 #endif /* ICEGitSet_pch */
