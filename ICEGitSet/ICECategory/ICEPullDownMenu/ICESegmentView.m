@@ -8,6 +8,7 @@
 
 const static NSInteger cell_tag = 1000;
 const static NSInteger title_tag = 1100;
+const static NSInteger img_tag = 1200;
 #import "ICESegmentView.h"
 
 @interface ICESegmentView ()
@@ -21,7 +22,6 @@ const static NSInteger title_tag = 1100;
 
 @implementation ICESegmentView
 
-
 #pragma mark -  init
 - (instancetype)initWithTitles:(NSArray *)titles
                      withFrame:(CGRect)frame{
@@ -30,7 +30,7 @@ const static NSInteger title_tag = 1100;
     if (self) {
         self.datasource = [titles mutableCopy];
         self.tinColor = [UIColor blackColor];
-        self.selectedColor = [UIColor  blueColor];
+        self.selectedColor = [UIColor blueColor];
         self.backgroundColor = [UIColor whiteColor];
         [self reloadMenuView];
     }
@@ -48,7 +48,30 @@ const static NSInteger title_tag = 1100;
     return _datasource;
 }
 
+- (void)setCurrentSelectedIndex:(NSInteger)currentSelectedIndex{
 
+    if (_currentSelectedIndex != currentSelectedIndex) {
+        _currentSelectedIndex = currentSelectedIndex;
+       
+        for (int i =0 ; i < self.datasource.count; i ++) {
+            UIView *other_cell = [self viewWithTag:cell_tag + i];
+            UILabel *other_titleLable = [other_cell viewWithTag:title_tag + i];
+            UIImageView *other_imgV = [other_cell viewWithTag:img_tag + i];
+            
+            other_imgV.highlighted = NO;
+            other_titleLable.highlighted = NO;
+        }
+    }
+    if (currentSelectedIndex >= 0) {
+        UIView *other_cell = [self viewWithTag:cell_tag + currentSelectedIndex];
+        UILabel *other_titleLable = [other_cell viewWithTag:title_tag + currentSelectedIndex];
+        UIImageView *other_imgV = [other_cell viewWithTag:img_tag + currentSelectedIndex];
+        
+        other_imgV.highlighted = !other_imgV.highlighted;
+        other_titleLable.highlighted = !other_titleLable.highlighted;
+  
+    }
+}
 
 /**
  *  指定下标的单元格 (为单元格设置两种状态)
@@ -56,7 +79,7 @@ const static NSInteger title_tag = 1100;
 - (UIView *)p_cellWithTitle:(NSString *)title
                   withIndex:(NSInteger)index
                   withFrame:(CGRect)frame{
-    
+    CGFloat img_w = 20 ;
     
     UIView *cell = [[UIView alloc] init];
     cell.frame = frame;
@@ -67,39 +90,37 @@ const static NSInteger title_tag = 1100;
     titleLable.tag = title_tag + index;
     titleLable.textAlignment = NSTextAlignmentCenter;
     titleLable.textColor = self.tinColor;
-    titleLable.font = [UIFont systemFontOfSize:14 * 1.3];
+    titleLable.highlightedTextColor = self.selectedColor;
+    titleLable.font = UIFontWithSize(14);
     titleLable.backgroundColor = [UIColor clearColor];
-    titleLable.frame = cell.bounds;
     [cell addSubview:titleLable];
     
+    
     CGFloat title_w = sizeWithString(title, 1000, 1000, titleLable.font).width;
-    __block UIImageView *imgV = [[UIImageView alloc ]initWithImage:[UIImage imageNamed:@"icon-arrowdown"]];
+    CGFloat title_x = (frame.size.width - title_w - img_w ) / 2 + 2;
+    
+    titleLable.frame = CGRectMake(title_x, 0, title_w, frame.size.height);
+    
+    UIImageView *imgV = [[UIImageView alloc ]initWithImage:[UIImage imageNamed:@"icon-arrowdown"]];
     imgV.highlightedImage = [UIImage imageNamed:@"icon-arrowdown-active"];
-    imgV.frame = CGRectMake((cell.width + title_w) / 2 + 5, (cell.height - 30) / 2, 30, 30);
+    imgV.frame = CGRectMake(title_w + title_x, (cell.height - img_w) / 2, img_w, img_w);
+    imgV.tag = img_tag + index;
     [cell addSubview:imgV];
     
     
     UIView *partLine = [[UIView alloc] init];
-    partLine.backgroundColor = self.tinColor;
+    partLine.backgroundColor = [UIColor darkGrayColor];
     partLine.frame = CGRectMake(cell.width,(cell.height - 20) / 2, 1, 20);
     [cell addSubview: partLine];
     
     
-    __block BOOL isSelected = NO;
     __weak typeof(self) weakSelf = self;
     [cell whenTouchedUp:^{
-        NSLog(@"fdsafs");
-        //状态改变
-        isSelected = !isSelected;
-        imgV.highlighted = isSelected;
-        if (isSelected) {
-            titleLable.textColor = weakSelf.selectedColor;
-        }else{
-            titleLable.textColor = self.tinColor;
-        }
+
+        weakSelf.currentSelectedIndex = index;
         //点击回调
-        if (self.cellBlcok) {
-            self.cellBlcok(index, isSelected);
+        if (weakSelf.cellBlcok) {
+            weakSelf.cellBlcok(index, titleLable.highlighted);
         }
     }];
     
@@ -107,6 +128,7 @@ const static NSInteger title_tag = 1100;
     
     return cell;
 }
+
 
 
 #pragma mark - public

@@ -21,7 +21,7 @@ typedef void (^SelectCellBlock) (NSInteger index ,BOOL selected);
 
 @property (nonatomic, strong) UIColor *tinColor;
 @property (nonatomic, strong) UIColor *selectedColor;
-
+@property (nonatomic, assign) NSInteger currentSelectedIndex;//selected
 //更具标题数组进行初始化
 - (instancetype)initWithTitles:(NSArray *)titles withFrame:(CGRect)frame;
 
