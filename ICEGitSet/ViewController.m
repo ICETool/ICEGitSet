@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ICESearchBar.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    ICESearchBar *searchBar = [[ICESearchBar alloc]init];
+    searchBar.backgroundColor = [UIColor whiteColor];
+    searchBar.layer.borderWidth = 1;
+    searchBar.layer.borderColor = [[UIColor darkGrayColor] CGColor];
+    searchBar.title = @"搜索";
+    searchBar.frame = CGRectMake(0, 100, self.view.width, 40);
+    [searchBar updateSearchBar:^(NSString *text) {
+        NSLog(@"%@",text);
+    }];
+    [self.view addSubview:searchBar];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
