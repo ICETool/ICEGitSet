@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ICETabbarController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,24 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc ]initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyWindow];
+    
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.view.backgroundColor = [UIColor redColor];
+    UIViewController *vc1 = [[UIViewController alloc] init];
+    vc1.view.backgroundColor = [UIColor blueColor];
+    
+    ICETabbarController *tabbar = [[ICETabbarController alloc] init];
+    tabbar.viewControllers = @[vc,vc1];
+    ICETabbarButtonItem *homeItem = [[ICETabbarButtonItem alloc] initWithTitle:@"首页" withSelectImage:[UIImage imageNamed:@"icon_home"] withNormalImage:[UIImage imageNamed:@"icon_home_o"]];
+    ICETabbarButtonItem *meItem = [[ICETabbarButtonItem alloc] initWithTitle:@"我的" withSelectImage:[UIImage imageNamed:@"icon_user"] withNormalImage:[UIImage imageNamed:@"icon_user_o"]];
+    tabbar.myTabbar.items = @[homeItem,meItem];
+    
+    
+    
+    self.window.rootViewController = tabbar;
+    
     return YES;
 }
 
