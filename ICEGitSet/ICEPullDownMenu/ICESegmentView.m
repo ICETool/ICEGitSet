@@ -30,9 +30,11 @@ const static NSInteger img_tag = 1200;
     if (self) {
         self.datasource = [titles mutableCopy];
         self.tinColor = [UIColor blackColor];
-        self.selectedColor = [UIColor blueColor];
+        self.selectedColor = [UIColor redColor];
+        self.titleFont = [UIFont systemFontOfSize:14];
+        self.partLineColor = [UIColor darkGrayColor];
+        
         self.backgroundColor = [UIColor whiteColor];
-        [self reloadMenuView];
     }
     return self;
 }
@@ -91,7 +93,7 @@ const static NSInteger img_tag = 1200;
     titleLable.textAlignment = NSTextAlignmentCenter;
     titleLable.textColor = self.tinColor;
     titleLable.highlightedTextColor = self.selectedColor;
-    titleLable.font = UIFontWithSize(14);
+    titleLable.font = self.titleFont;
     titleLable.backgroundColor = [UIColor clearColor];
     [cell addSubview:titleLable];
     
@@ -109,7 +111,7 @@ const static NSInteger img_tag = 1200;
     
     
     UIView *partLine = [[UIView alloc] init];
-    partLine.backgroundColor = [UIColor darkGrayColor];
+    partLine.backgroundColor = self.partLineColor;
     partLine.frame = CGRectMake(cell.width,(cell.height - 20) / 2, 1, 20);
     [cell addSubview: partLine];
     
@@ -155,5 +157,13 @@ const static NSInteger img_tag = 1200;
     UILabel *titleLable = [cell viewWithTag:title_tag + index];
     titleLable.text = title;
     
+}
+
+
+- (void)didMoveToSuperview{
+
+    [super didMoveToSuperview];
+    [self reloadMenuView];
+
 }
 @end

@@ -26,10 +26,21 @@
     [menuView.segmentView didSelectedCell:^(NSInteger index, BOOL selected) {
         if (selected) {
             NSString *str = [NSString stringWithFormat:@"%ld",index];
-            menuView.datasource = [@[str,str,str] mutableCopy];
+            if (index == 0 || index == 1) {
+                menuView.ddView.leftDatasource = [@[str,str,str] mutableCopy];
+                menuView.ddView.rightDatasource = [@[str,str,str] mutableCopy];
+            }else{
+                menuView.datasource = [@[str,str,str] mutableCopy];
+            }
         }else{
             menuView.datasource = [@[] mutableCopy];
+            menuView.ddView.leftDatasource = [@[] mutableCopy];
+            menuView.ddView.rightDatasource = [@[] mutableCopy];
         }
+    }];
+    
+    [menuView.ddView dieSelected:^(NSInteger idx, NSIndexPath *indexPath) {
+        
     }];
     
     [self.view addSubview:menuView];

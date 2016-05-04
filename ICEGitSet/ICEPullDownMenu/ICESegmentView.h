@@ -19,9 +19,11 @@ typedef void (^SelectCellBlock) (NSInteger index ,BOOL selected);
 
 @interface ICESegmentView : UIView
 
-@property (nonatomic, strong) UIColor *tinColor;
-@property (nonatomic, strong) UIColor *selectedColor;
+@property (nonatomic, strong) UIColor   *tinColor;//正常状态下 字体颜色
+@property (nonatomic, strong) UIColor   *selectedColor;//高亮状态下字体颜色
 @property (nonatomic, assign) NSInteger currentSelectedIndex;//selected
+@property (nonatomic, strong) UIFont    *titleFont;//字体大小
+@property (nonatomic, strong) UIColor   *partLineColor;//分割线颜色
 //更具标题数组进行初始化
 - (instancetype)initWithTitles:(NSArray *)titles withFrame:(CGRect)frame;
 
