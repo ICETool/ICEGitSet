@@ -1,0 +1,30 @@
+//
+//  ICEInputView.m
+//  ICEChatDemo
+//
+//  Created by WLY on 16/5/4.
+//  Copyright © 2016年 ICE. All rights reserved.
+//
+
+#import "ICEInputView.h"
+
+@interface ICEInputView ()
+
+@end
+
+@implementation ICEInputView
+
+
+
+
+
+
+
+
+- (void)didMoveToSuperview{
+    [super didMoveToSuperview];
+    self.backgroundColor = [UIColor blueColor];
+}
+
+
+@end
