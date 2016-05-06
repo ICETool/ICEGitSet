@@ -27,6 +27,14 @@ typedef enum MessageType{
 }MessageType;
 
 
+/**
+ 消息发送成功的状态
+ */
+typedef enum MessageSendSuccessStatus {
+
+    MessageSendSuccessStatusFailed,//发送失败
+    MessageSendSuccessStatusSuccess,//发送成功
+}MessageSendSuccessStatus;
 
 #pragma mark - 单元格间距
 

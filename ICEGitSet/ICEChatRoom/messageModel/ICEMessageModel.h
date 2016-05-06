@@ -7,7 +7,7 @@
 //
 
 /**
- 消息实体
+   单个消息实体
  */
 #import <YYModel/YYModel.h>
 #import "ICEChatDemoDefine.h"
@@ -21,16 +21,17 @@
 
 @interface ICEMessageModel : NSObject
 
-@property (nonatomic, assign) MessageFrom            messageFrom;//消息来源
-@property (nonatomic, assign) MessageType            messageType;//消息类型
-@property (nonatomic, copy  ) NSString               *avatorImgURL;//用户头像
-@property (nonatomic, copy  ) NSString               *userName;//用户名
-@property (nonatomic, copy  ) NSString               *sendTime;//发送时间
-@property (nonatomic, assign) NSInteger              userID;//用户id
+@property (nonatomic, assign) MessageSendSuccessStatus messageSendSuccessStatus;//消息发送成功的状态
+@property (nonatomic, assign) MessageFrom              messageFrom;//消息来源
+@property (nonatomic, assign) MessageType              messageType;//消息类型
+@property (nonatomic, copy  ) NSString                 *avatorImgURL;//用户头像
+@property (nonatomic, copy  ) NSString                 *userName;//用户名
+@property (nonatomic, copy  ) NSString                 *sendTime;//发送时间
+@property (nonatomic, assign) NSInteger                userID;//用户id
 /**
  *  消息内容, 分为三个类型, 语音消息 传递 语音消息地址, 图片消息 传递图片 image
  */
-@property (nonatomic, strong) ICEMessageContentModel *messageContent;
+@property (nonatomic, strong) ICEMessageContentModel   *messageContent;
 
 
 /**

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1793B0841CDC6D1D00E546D0 /* ICEMessagesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1793B0831CDC6D1D00E546D0 /* ICEMessagesModel.m */; };
 		179CB8F81CDC336D0069DA5B /* ICEMessageContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 179CB8F71CDC336D0069DA5B /* ICEMessageContentModel.m */; };
 		179CB90B1CDC362E0069DA5B /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 179CB8F91CDC362E0069DA5B /* camera.png */; };
 		179CB90C1CDC362E0069DA5B /* default_photo1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 179CB8FA1CDC362E0069DA5B /* default_photo1@2x.png */; };
@@ -69,6 +70,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1793B0821CDC6D1D00E546D0 /* ICEMessagesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEMessagesModel.h; sourceTree = "<group>"; };
+		1793B0831CDC6D1D00E546D0 /* ICEMessagesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEMessagesModel.m; sourceTree = "<group>"; };
 		179CB8F61CDC336D0069DA5B /* ICEMessageContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEMessageContentModel.h; sourceTree = "<group>"; };
 		179CB8F71CDC336D0069DA5B /* ICEMessageContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEMessageContentModel.m; sourceTree = "<group>"; };
 		179CB8F91CDC362E0069DA5B /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 		17A302DE1CDAF48E007257B5 /* messageModel */ = {
 			isa = PBXGroup;
 			children = (
+				1793B0821CDC6D1D00E546D0 /* ICEMessagesModel.h */,
+				1793B0831CDC6D1D00E546D0 /* ICEMessagesModel.m */,
 				17C781E51CDB3801009DE145 /* ICEMessageModel.h */,
 				17C781E61CDB3801009DE145 /* ICEMessageModel.m */,
 				179CB8F61CDC336D0069DA5B /* ICEMessageContentModel.h */,
@@ -577,6 +582,7 @@
 				17D704851CCDFA3F009CA7C0 /* UIGestureRecognizer+ICEAdd.m in Sources */,
 				179CB91F1CDC39860069DA5B /* ICETextMessageCell.m in Sources */,
 				17D704821CCDFA3F009CA7C0 /* UIButton+ICEBlock.m in Sources */,
+				1793B0841CDC6D1D00E546D0 /* ICEMessagesModel.m in Sources */,
 				17D704761CCDFA3F009CA7C0 /* NSArray+ICEAdd.m in Sources */,
 				17C781DE1CDB34EE009DE145 /* ICEMessageBaseCell.m in Sources */,
 				17D7042F1CCDF40E009CA7C0 /* main.m in Sources */,
