@@ -11,6 +11,7 @@
 
 #import "ICEMessageCell.h"
 #import "ICEMessageModel.h"
+#import "ICETextMessageModel.h"
 
 @interface ICETextMessageCell : ICEMessageCell
 
@@ -25,6 +26,7 @@
  */
 @property(nonatomic, strong) UIImageView *bubbleBackgroundView;
 
+@property (nonatomic, strong) ICETextMessageModel *textMessageModel;//文本消息内容实体
 
 /**
  *  计算气泡的size

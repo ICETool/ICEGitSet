@@ -41,10 +41,10 @@
  */
 - (void)setLayout{
 
-    CGSize textMessageSize = [[self class] textMessageContentSize:self.MessageContentModel.content];
+    CGSize textMessageSize = [[self class] textMessageContentSize:self.textMessageModel.content];
     
     CGSize bubbleSize = [[self class] getBubbleSize:textMessageSize];
-    self.textMessageLabel.text = self.MessageContentModel.content;
+    self.textMessageLabel.text = self.textMessageModel.content;
     
     switch (self.messageFrom) {
         case MessageFromSelf: {
@@ -149,6 +149,8 @@
 
 - (void)setValueWithModel:(ICEMessageModel *)message{
 
+    self.textMessageModel = message.textMessage;
+    
     [super setValueWithModel:message];
     
     [self initialize];

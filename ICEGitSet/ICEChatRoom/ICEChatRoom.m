@@ -7,20 +7,12 @@
 //
 
 #import "ICEChatRoom.h"
+#import "ICEChatDemoDefine.h"
 #import "ICEMessageModel.h"
 #import "ICEMessageListView.h"
 #import "ICEInputView.h"
 #import "ICEKeyboardNotifaction.h"
 
-#define  NAVI_H  64
-#define  ICEInput_h 150
-
-#define ICEInputFrame_Normal  CGRectMake(0, self.height - 50, self.width,                   ICEInput_h)//正常状态下的输入视图frame
-#define ICEInputFrame_ShowKeyBoard CGRectMake(0, self.height - 50 - keyBoard_h, self.width, ICEInput_h)//显示键盘状态下的输入视图frame
-#define ICEInputFrame_ShowAddView  CGRectMake(0, self.height - ICEInput_h, self.width,              ICEInput_h)//显示辅助视图状态下的输入视图frame
-#define ICEMessageListView_Normal  CGRectMake(0, 0, self.width, self.height   -                           50)//正常状态下的聊天列表frame
-#define ICEMessageListView_ShowKeyBoard CGRectMake(0, 0, self.width, self.height - 50 -     keyBoard_h)//显示键盘状态下的聊天列表frame
-#define ICEMessageListView_HideAddView CGRectMake(0, 0, self.width, self.height -                   50)//显示副主视图状态下的聊天类表frame
 
 
 
@@ -114,6 +106,8 @@ static CGFloat keyBoard_h = 0;
     //注册键盘弹出和隐藏通知
     [ICEKeyboardNotifaction registerKeyBoardShow:self];
     [ICEKeyboardNotifaction registerKeyBoardHide:self];
+    
+    [self p_inputViewUserinteraction];
 }
 
 /**
@@ -160,22 +154,76 @@ static CGFloat keyBoard_h = 0;
     }];
 }
 
+/**
+ *  输入视图交互逻辑
+ */
+- (void)p_inputViewUserinteraction{
+
+    
+    __weak typeof(self) weakSelf = self;
+
+    CGRect inputFrame_ShowAddView = ICEInputFrame_ShowAddView;
+    CGRect messageListView_ShowAddView = ICEMessageListView_ShowAddView;
+    CGRect inputFrame_Normal = ICEInputFrame_Normal;
+    CGRect messageListView_Normal = ICEMessageListView_Normal;
+    
+    [self.inputView addViewShowState:^(BOOL isShowAddView) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [[UIApplication sharedApplication].keyWindow endEditing:YES];
+
+        [UIView beginAnimations:nil context:nil];
+        if (isShowAddView) {
+            strongSelf.inputView.frame =  inputFrame_ShowAddView;
+            strongSelf.messageListView.frame = messageListView_ShowAddView;
+        }else{
+            strongSelf.inputView.frame =  inputFrame_Normal;
+            strongSelf.messageListView.frame = messageListView_Normal;
+        }
+        [UIView commitAnimations];
+    }];
+}
+
 
 #pragma mark - inputDelegate
+
+//文本消息
 - (void)inputView:(ICEInputView *)inputView withTextMessage:(NSString *)textMessage{
 
     ICEMessageModel *model = [[ICEMessageModel alloc] init];
     model.userName = @"自己";
     model.messageFrom = MessageFromSelf;
-    model.messageContent.content = textMessage;
-    model.messageContent.messageType = MessageTypeText;
+    model.textMessage.content = textMessage;
+    model.messageType = MessageTypeText;
     
     [self.messageListView addOneMessage:model];
     
     ICEMessageModel *model1 = [[ICEMessageModel alloc] init];
     model1.userName = @"自己";
-    model1.messageContent.content = textMessage;
+    model1.textMessage.content = textMessage;
     model1.messageFrom = MessageFromOther;
+    model1.messageType = MessageTypeText;
     [self.messageListView addOneMessage:model1];
+}
+
+
+//图片消息
+- (void)inputView:(ICEInputView *)inputView withPictureMessage:(NSString *)PictureMessage{
+
+    ICEMessageModel *model = [[ICEMessageModel alloc] init];
+    model.userName = @"自己";
+    model.messageFrom = MessageFromSelf;
+    model.pickerMessage.imageURL = PictureMessage;
+    model.messageType = MessageTypePicture;
+    
+    [self.messageListView addOneMessage:model];
+    
+    ICEMessageModel *model1 = [[ICEMessageModel alloc] init];
+    model1.userName = @"自己";
+    model1.pickerMessage.imageURL = @"http://img0.imgtn.bdimg.com/it/u=938096994,3074232342&fm=21&gp=0.jpg";
+    model1.messageFrom = MessageFromOther;
+    model1.messageType = MessageTypePicture;
+
+    [self.messageListView addOneMessage:model1];
+
 }
 @end

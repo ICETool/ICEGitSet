@@ -6,8 +6,8 @@
 //  Copyright © 2016年 ICE. All rights reserved.
 //
 
-#import "ICEMessageContentModel.h"
+#import "ICETextMessageModel.h"
 
-@implementation ICEMessageContentModel
+@implementation ICETextMessageModel
 
 @end

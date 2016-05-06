@@ -7,17 +7,22 @@
 //
 
 #import "ICEMessageListView.h"
+#import "UIScrollView+ICEAdd.h"
+#import "ICEChatDemoDefine.h"
 #import "ICEMessageModel.h"
 
 
 #import "ICETextMessageCell.h"
+#import "ICEPickerMessageCell.h"
+#import "ICEVoiceMessageCell.h"
 
 
-#import "UIScrollView+ICEAdd.h"
 
 #pragma  mark - 单元格标示符
 
-static NSString  *define_text = @"text";//单元格标示符
+static NSString  *define_text = @"text";//文本单元格标示符
+static NSString  *define_picker = @"picker";//图片单元格标示符
+static NSString  *define_voice = @"voice";//语音单元格标示符
 
 @interface ICEMessageListView ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray *datasource;//设置历史消息
@@ -65,7 +70,10 @@ static NSString  *define_text = @"text";//单元格标示符
         _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
         
         [_tableView registerClass:[ICETextMessageCell class] forCellReuseIdentifier:define_text];
-
+        [_tableView registerClass:[ICEPickerMessageCell class] forCellReuseIdentifier:define_picker];
+        [_tableView registerClass:[ICEVoiceMessageCell class] forCellReuseIdentifier:define_voice];
+        
+        
         [self addSubview:_tableView];
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(0);
@@ -95,7 +103,24 @@ static NSString  *define_text = @"text";//单元格标示符
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     ICEMessageModel *model = self.datasource[indexPath.row];
-    ICEMessageBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:define_text forIndexPath:indexPath];
+    static NSString *identifer ;
+    switch (model.messageType) {
+        case MessageTypeText: {
+            identifer = define_text;
+            break;
+        }
+        case MessageTypePicture: {
+            identifer = define_picker;
+            break;
+        }
+        case MessageTypeVoice: {
+            identifer = define_voice;
+            break;
+        }
+    }
+    
+    
+    ICEMessageBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:identifer forIndexPath:indexPath];
     [cell setValueWithModel:model];
     return cell;
 }

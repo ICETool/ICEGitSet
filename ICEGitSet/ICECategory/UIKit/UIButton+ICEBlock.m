@@ -29,6 +29,7 @@ static char overviewKey;
     ActionBlock block = (ActionBlock)objc_getAssociatedObject(self, &overviewKey);
     if (block) {
         block(sender);
+        
     }
 }
 

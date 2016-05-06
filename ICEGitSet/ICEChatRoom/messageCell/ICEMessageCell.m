@@ -59,7 +59,9 @@
     
     
 }
+- (void)setLayout{
 
+}
 /**
  *  布局视图位置
  */
@@ -144,9 +146,7 @@
     
     [super setValueWithModel:message];
     
-    self.messageModel = message;
-    self.MessageContentModel = message.messageContent;
-    
+    self.messageModel = message;    
     self.messageFrom = message.messageFrom;
     self.messageType = message.messageType;
     

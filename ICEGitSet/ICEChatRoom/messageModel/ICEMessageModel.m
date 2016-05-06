@@ -11,21 +11,43 @@
 
 @implementation ICEMessageModel
 
-- (ICEMessageContentModel *)messageContent{
+- (ICETextMessageModel *)textMessage{
 
-    if (!_messageContent) {
-        _messageContent = [[ICEMessageContentModel alloc] init];
+    if (!_textMessage) {
+        _textMessage = [[ICETextMessageModel alloc] init];
     }
-    return _messageContent;
+    return _textMessage;
+}
+
+- (ICEPickerMessageModel *)pickerMessage{
+
+    if (!_pickerMessage) {
+        _pickerMessage = [[ICEPickerMessageModel alloc] init];
+    }
+    return _pickerMessage;
 }
 
 - (CGFloat)cellHeight{
 
     CGFloat cell_h = 5.5 * CELLSpacing;
-    CGSize bubbleSize ;
-    bubbleSize = [ICETextMessageCell  getBubbleSize:[ICETextMessageCell textMessageContentSize:self.messageContent.content]];
+    CGFloat content_h = 0 ;
     
-    return cell_h += bubbleSize.height;
+    switch (self.messageType) {
+        case MessageTypeText: {
+          content_h = [ICETextMessageCell  getBubbleSize:[ICETextMessageCell textMessageContentSize:self.textMessage.content]].height;
+            break;
+        }
+        case MessageTypePicture: {
+            content_h = CELL_PickerMessaegeContetn_H;
+            break;
+        }
+        case MessageTypeVoice: {
+            
+            break;
+        }
+    }
+    
+    return cell_h += content_h;
     
 }
 

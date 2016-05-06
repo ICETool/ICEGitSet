@@ -10,9 +10,13 @@
 
 @class ICEMessageModel;
 @class ICEInputView;
+
+
 typedef void(^VoiceBtnBlock) (BOOL isVoice);
-
-
+/**
+ *  其他视图显示状态回调
+ */
+typedef void (^AddViewBlock) (BOOL isShowAddView);
 
 @protocol InputViewDelegate <NSObject>
 /**
@@ -20,9 +24,9 @@ typedef void(^VoiceBtnBlock) (BOOL isVoice);
  */
 - (void)inputView:(ICEInputView *)inputView withTextMessage:(NSString *)textMessage;
 /**
- *  发送文本消息回调
+ *  发送图片消息回调
  */
-- (void)inputView:(ICEInputView *)inputView withPictureMessage:(NSDictionary *)PictureMessage;
+- (void)inputView:(ICEInputView *)inputView withPictureMessage:(NSString *)PictureMessage;
 /**
  *  发送语音消息回调
  */
@@ -38,5 +42,11 @@ typedef void(^VoiceBtnBlock) (BOOL isVoice);
 @property (nonatomic, assign) id<InputViewDelegate> delegate;
 
 
+
+
+/**
+ *  显示视图 显示状态交互回调
+ */
+- (void)addViewShowState:(AddViewBlock)completion;
 
 @end

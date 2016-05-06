@@ -7,9 +7,8 @@
 //
 
 #import "ICEInputView.h"
-
-#define ICEInput_h 50
-#define ICEAddView_h 100
+#import "ICEChatDemoDefine.h"
+#import "ICEPickerController.h"
 
 
 #pragma mark - 协议是否可响应
@@ -21,13 +20,16 @@ static BOOL usable_image = NO;
 
 @interface ICEInputView ()<UITextViewDelegate>
 
-@property (nonatomic, strong) UIView *inputView;//输入视图
+@property (nonatomic, strong) UIView *myInputView;//输入视图
 @property (nonatomic, strong) UIView *addView;//辅助视图(打开相册等..)
 @property (nonatomic, strong) UITextView *inputTV;//输入框
 @property (nonatomic, strong) UIButton *voiceBtn;//语音按钮
 @property (nonatomic, strong) UIView   *voiceView;//语音视图
 
+@property (nonatomic,   copy)   AddViewBlock addViewBlock;//显示和隐藏辅助视图时的回调
 
+
+@property (nonatomic, strong) ICEPickerController *picker;//照片获取器
 
 @end
 
@@ -58,6 +60,14 @@ static BOOL usable_image = NO;
 
 #pragma mark - lazy load
 
+- (ICEPickerController *)picker{
+
+    if (!_picker) {
+        _picker = [[ICEPickerController alloc] init];
+    }
+    return _picker;
+}
+
 - (UITextView *)inputTV{
 
     if (!_inputTV) {
@@ -83,11 +93,9 @@ static BOOL usable_image = NO;
         
         [_stateBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^(UIButton *button) {
             _stateBtn.selected = !_stateBtn.selected;
-//            if (_stateBtn.selected) {
-//                self.centerY -= ICEAddView_h;
-//            }else{
-//                self.centerY += ICEAddView_h;
-//            }
+            if (self.addViewBlock) {
+                self.addViewBlock(_stateBtn.selected);
+            }
         }];
         
     }
@@ -146,7 +154,7 @@ static BOOL usable_image = NO;
     [[self layer] setShadowColor:[UIColor blackColor].CGColor];
     
     [self p_inputView];
-    
+    [self p_addView];
 }
 
 
@@ -155,19 +163,19 @@ static BOOL usable_image = NO;
  */
 - (void)p_inputView{
 
-    self.inputView = [[UIView alloc] init];
+    self.myInputView = [[UIView alloc] init];
     self.inputView.backgroundColor = [UIColor whiteColor];
-    [self addSubview:self.inputView];
+    [self addSubview:self.myInputView];
 
-    [self.inputView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.myInputView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(0);
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
-        make.height.mas_equalTo(ICEInput_h);
+        make.height.mas_equalTo(ICEInput_InputView_H);
     }];
 
     //输入框
-    [self.inputView addSubview:self.inputTV];
+    [self.myInputView addSubview:self.inputTV];
     [self.inputTV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(7.5);
         make.left.mas_equalTo(60);
@@ -176,7 +184,7 @@ static BOOL usable_image = NO;
     }];
     
     //语音按钮
-    [self.inputView addSubview:self.voiceBtn];
+    [self.myInputView addSubview:self.voiceBtn];
     [self.voiceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15);
         make.bottom.mas_equalTo(- 7.5);
@@ -184,7 +192,7 @@ static BOOL usable_image = NO;
     }];
     //状态按钮
     
-    [self.inputView addSubview:self.stateBtn];
+    [self.myInputView addSubview:self.stateBtn];
     [self.stateBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(- 15);
         make.bottom.mas_equalTo(- 7.5);
@@ -194,7 +202,7 @@ static BOOL usable_image = NO;
     
     
     //语音输入视图
-    [self.inputView addSubview:self.voiceView];
+    [self.myInputView addSubview:self.voiceView];
     [self.voiceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.inputTV.mas_top);
         make.left.mas_equalTo(self.inputTV.mas_left);
@@ -208,14 +216,51 @@ static BOOL usable_image = NO;
 - (void)p_addView{
 
     self.addView = [[UIView alloc] init];
+    self.addView.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.addView];
     [self.addView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.inputView.mas_bottom).with.offset(0.5);
+        make.top.mas_equalTo(self.myInputView.mas_bottom).with.offset(0.5);
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
         make.bottom.mas_equalTo(0);
     }];
     
+    
+    UIView *partLine = [[UIView alloc] init];
+    partLine.backgroundColor = [UIColor lightGrayColor];
+    [self.addView addSubview:partLine];
+    [partLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(0);
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.height.mas_equalTo(0.5);
+    }];
+    
+    NSArray *imgs = @[[UIImage imageNamed:@"camera"],[UIImage imageNamed:@"picture"]];
+    
+    CGFloat cell_w = 80;
+    CGFloat cell_spacing = 30;
+    
+    for (int i = 0 ; i < imgs.count; i ++) {
+        //打开相机
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+        [btn setImage:[imgs[i] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]forState:UIControlStateNormal];
+        btn.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+        btn.layer.borderWidth = 0.5;
+        btn.userInteractionEnabled = YES;
+        btn.layer.cornerRadius = 4;
+        [self.addView addSubview:btn];
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo((cell_spacing + (cell_spacing + cell_w ) * i));
+            make.centerY.mas_equalTo(self.addView.mas_centerY);
+            make.size.mas_equalTo(CGSizeMake(cell_w,cell_w));
+        }];
+        
+        [btn handleControlEvent:UIControlEventTouchUpInside withBlock:^(UIButton *button) {
+            [self p_handelActionForAddView:i];
+        }];
+        
+    }
 }
 
 /**
@@ -224,6 +269,47 @@ static BOOL usable_image = NO;
 - (void)p_interfaction{
 
     
+}
+
+- (void)addViewShowState:(AddViewBlock)completion{
+
+    _addViewBlock = completion;
+}
+#pragma mark - 功能实现
+/**
+ *  点击辅助视图中的功能实现 (打开相册 / 打开相机)
+ *
+ *  @param index
+ */
+- (void)p_handelActionForAddView:(NSInteger)index{
+
+    //发送图片消息
+    
+    //打开相机
+    if (index == 0 ) {
+    
+        [self.picker getPictureFromeCamearWithViewController:[ICEPickerController getCurrentVC] completion:^(NSDictionary *imageInfo) {
+            
+            if ([imageInfo[@"errCode"] intValue] == 1) {
+                if (usable_image) {
+                    [self.delegate inputView:self withPictureMessage:imageInfo[@"imageURL"]];
+                }
+            }
+    
+        }];
+    }
+    
+    //打开相册
+    if (index == 1) {
+        [self.picker getPictureFromePictureBrowseWithViewController:[ICEPickerController getCurrentVC] completion:^(NSDictionary *imageInfo) {
+           
+            if ([imageInfo[@"errCode"] intValue] == 1) {
+                    if (usable_image) {
+                        [self.delegate inputView:self withPictureMessage:imageInfo[@"imageURL"]];
+                }
+            }
+        }];
+    }
 }
 
 

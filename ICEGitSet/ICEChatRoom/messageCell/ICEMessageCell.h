@@ -12,7 +12,6 @@
 
 
 #import "ICEMessageBaseCell.h"
-#import "ICEMessageContentModel.h"
 
 
 
@@ -24,10 +23,14 @@
 @property (nonatomic, strong) UILabel     *nameLabel;//姓名
 @property (nonatomic, strong) UIView      *messageContentView;//消息
 @property (nonatomic, strong) ICEMessageModel *messageModel;//消息实体
-@property (nonatomic, strong) ICEMessageContentModel *MessageContentModel;//消息内容实体
 
 /**
  *  初始化方法
  */
 - (void)initialize;
+
+/**
+ *  设置布局
+ */
+- (void)setLayout;
 @end

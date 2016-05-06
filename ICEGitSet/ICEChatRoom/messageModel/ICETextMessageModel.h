@@ -6,14 +6,14 @@
 //  Copyright © 2016年 ICE. All rights reserved.
 //
 /**
- 消息内容实体
+  文本消息内容数据模型
  */
 #import <Foundation/Foundation.h>
 #import "ICEChatDemoDefine.h"
 
 
 
-@interface ICEMessageContentModel : NSObject
+@interface ICETextMessageModel : NSObject
 
 @property (nonatomic, strong) NSString *content;//消息内容
 
