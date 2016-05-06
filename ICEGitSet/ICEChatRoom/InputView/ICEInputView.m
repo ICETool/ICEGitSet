@@ -239,10 +239,12 @@ static BOOL usable_image = NO;
         return  NO;
     }
     if ([text isEqualToString:@"\n"]) {
-        
-        if (usable_text) {
-            [self.delegate inputView:self withTextMessage:self.inputTV.text];
-            self.inputTV.text = @"";
+        if (self.inputTV.text.length > 0) {
+            if (usable_text) {
+                
+                [self.delegate inputView:self withTextMessage:self.inputTV.text];
+                self.inputTV.text = @"";
+            }
         }
         return NO;
     }

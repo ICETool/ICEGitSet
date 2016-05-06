@@ -167,12 +167,14 @@ static CGFloat keyBoard_h = 0;
     ICEMessageModel *model = [[ICEMessageModel alloc] init];
     model.userName = @"自己";
     model.messageFrom = MessageFromSelf;
-    model.messageContent = @{@(MessageTypeText) : textMessage};
+    model.messageContent.content = textMessage;
+    model.messageContent.messageType = MessageTypeText;
     
     [self.messageListView addOneMessage:model];
     
     ICEMessageModel *model1 = [[ICEMessageModel alloc] init];
     model1.userName = @"自己";
+    model1.messageContent.content = textMessage;
     model1.messageFrom = MessageFromOther;
     [self.messageListView addOneMessage:model1];
 }

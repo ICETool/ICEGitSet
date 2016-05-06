@@ -8,8 +8,16 @@
 
 #import "ICEMessageListView.h"
 #import "ICEMessageModel.h"
-#import "ICEMessageBaseCell.h"
+
+
+#import "ICETextMessageCell.h"
+
+
 #import "UIScrollView+ICEAdd.h"
+
+#pragma  mark - 单元格标示符
+
+static NSString  *define_text = @"text";//单元格标示符
 
 @interface ICEMessageListView ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray *datasource;//设置历史消息
@@ -56,7 +64,7 @@
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
         
-        [_tableView registerClass:[ICEMessageBaseCell class] forCellReuseIdentifier:@"CELL"];
+        [_tableView registerClass:[ICETextMessageCell class] forCellReuseIdentifier:define_text];
 
         [self addSubview:_tableView];
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -87,8 +95,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     ICEMessageModel *model = self.datasource[indexPath.row];
-    ICEMessageBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL" forIndexPath:indexPath];
-
+    ICEMessageBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:define_text forIndexPath:indexPath];
     [cell setValueWithModel:model];
     return cell;
 }
@@ -96,7 +103,8 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     ICEMessageModel *model = self.datasource[indexPath.row];
 
-    return model.messageContentSize.height + CELLSpacing * 4 + CELLNameLabel_H ;
+    
+    return model.cellHeight ;
 }
 
 

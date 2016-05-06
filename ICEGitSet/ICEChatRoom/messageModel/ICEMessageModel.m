@@ -7,38 +7,35 @@
 //
 
 #import "ICEMessageModel.h"
+#import "ICETextMessageCell.h"
 
 @implementation ICEMessageModel
 
+- (ICEMessageContentModel *)messageContent{
 
-
-
-- (CGSize)messageContentSize{
-    
-//    switch (self.messageType) {
-//        case MessageTypeText: {
-//            return [self p_textMessageContentSize:self.messageContent[@(MessageTypeText)]];
-//        }
-//        case MessageTypePicture: {
-//            return [self p_pictrueMessageContentSize:self.messageContent[@(MessageTypePicture)]];
-//        }
-//        case MessageTypeVoice: {
-//            return [self p_voiceMessageContentSize:self.messageContent[@(MessageTypeVoice)]];
-//        }
-//    }
-    return [self p_textMessageContentSize:self.messageContent[@(MessageTypeText)]];
+    if (!_messageContent) {
+        _messageContent = [[ICEMessageContentModel alloc] init];
+    }
+    return _messageContent;
 }
 
-/**
- *  计算文本大小
- *
- */
-- (CGSize)p_textMessageContentSize:(NSString *)textMessage{
+- (CGFloat)cellHeight{
+
+    CGFloat cell_h = 5.5 * CELLSpacing;
+    CGSize bubbleSize ;
+    bubbleSize = [ICETextMessageCell  getBubbleSize:[ICETextMessageCell textMessageContentSize:self.messageContent.content]];
     
-    CGFloat max_w = 200 ;
-    return [textMessage boundingRectWithSize:CGSizeMake(max_w, 1000) options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} context:nil].size;
+    return cell_h += bubbleSize.height;
     
 }
+
+// 直接添加以下代码即可自动完成
+- (void)encodeWithCoder:(NSCoder *)aCoder { [self yy_modelEncodeWithCoder:aCoder]; }
+- (id)initWithCoder:(NSCoder *)aDecoder { self = [super init]; return [self yy_modelInitWithCoder:aDecoder]; }
+- (id)copyWithZone:(NSZone *)zone { return [self yy_modelCopy]; }
+- (NSUInteger)hash { return [self yy_modelHash]; }
+- (BOOL)isEqual:(id)object { return [self yy_modelIsEqual:object]; }
+- (NSString *)description { return [self yy_modelDescription]; }
 
 
 @end
