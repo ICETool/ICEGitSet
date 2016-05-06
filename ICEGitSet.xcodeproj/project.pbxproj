@@ -7,9 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17A302DF1CDAF48E007257B5 /* ICEChatRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A302D71CDAF48E007257B5 /* ICEChatRoom.m */; };
+		179CB8F51CDC2E1C0069DA5B /* ICEMessageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 179CB8F41CDC2E1C0069DA5B /* ICEMessageContentView.m */; };
 		17A302E01CDAF48E007257B5 /* ICEMessageListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A302D91CDAF48E007257B5 /* ICEMessageListView.m */; };
 		17A302E11CDAF48E007257B5 /* ICEInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A302DC1CDAF48E007257B5 /* ICEInputView.m */; };
+		17A302E51CDAF7FD007257B5 /* ICEKeyboardNotifaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A302E41CDAF7FD007257B5 /* ICEKeyboardNotifaction.m */; };
+		17C781D21CDB09B4009DE145 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C781CB1CDB09B4009DE145 /* camera.png */; };
+		17C781D31CDB09B4009DE145 /* default_photoM1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C781CC1CDB09B4009DE145 /* default_photoM1@2x.png */; };
+		17C781D41CDB09B4009DE145 /* iconfont-jianpan (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 17C781CD1CDB09B4009DE145 /* iconfont-jianpan (1).png */; };
+		17C781D51CDB09B4009DE145 /* iconfont-jikediancanicon09.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C781CE1CDB09B4009DE145 /* iconfont-jikediancanicon09.png */; };
+		17C781D61CDB09B4009DE145 /* iconfont-yuyin (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 17C781CF1CDB09B4009DE145 /* iconfont-yuyin (1).png */; };
+		17C781D71CDB09B4009DE145 /* pictureImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C781D01CDB09B4009DE145 /* pictureImg.png */; };
+		17C781D81CDB09B4009DE145 /* send.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C781D11CDB09B4009DE145 /* send.png */; };
+		17C781DB1CDB0E63009DE145 /* ICEChatRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C781DA1CDB0E63009DE145 /* ICEChatRoom.m */; };
+		17C781DE1CDB34EE009DE145 /* ICEMessageBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C781DD1CDB34EE009DE145 /* ICEMessageBaseCell.m */; };
+		17C781E71CDB3801009DE145 /* ICEMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C781E61CDB3801009DE145 /* ICEMessageModel.m */; };
 		17D7042F1CCDF40E009CA7C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D7042E1CCDF40E009CA7C0 /* main.m */; };
 		17D704321CCDF40E009CA7C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D704311CCDF40E009CA7C0 /* AppDelegate.m */; };
 		17D704351CCDF40E009CA7C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D704341CCDF40E009CA7C0 /* ViewController.m */; };
@@ -42,12 +53,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		17A302D61CDAF48E007257B5 /* ICEChatRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEChatRoom.h; sourceTree = "<group>"; };
-		17A302D71CDAF48E007257B5 /* ICEChatRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEChatRoom.m; sourceTree = "<group>"; };
+		179CB8F31CDC2E1C0069DA5B /* ICEMessageContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEMessageContentView.h; sourceTree = "<group>"; };
+		179CB8F41CDC2E1C0069DA5B /* ICEMessageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEMessageContentView.m; sourceTree = "<group>"; };
 		17A302D81CDAF48E007257B5 /* ICEMessageListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEMessageListView.h; sourceTree = "<group>"; };
 		17A302D91CDAF48E007257B5 /* ICEMessageListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEMessageListView.m; sourceTree = "<group>"; };
 		17A302DB1CDAF48E007257B5 /* ICEInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEInputView.h; sourceTree = "<group>"; };
 		17A302DC1CDAF48E007257B5 /* ICEInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEInputView.m; sourceTree = "<group>"; };
+		17A302E31CDAF7FD007257B5 /* ICEKeyboardNotifaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEKeyboardNotifaction.h; sourceTree = "<group>"; };
+		17A302E41CDAF7FD007257B5 /* ICEKeyboardNotifaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEKeyboardNotifaction.m; sourceTree = "<group>"; };
+		17C781CB1CDB09B4009DE145 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		17C781CC1CDB09B4009DE145 /* default_photoM1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_photoM1@2x.png"; sourceTree = "<group>"; };
+		17C781CD1CDB09B4009DE145 /* iconfont-jianpan (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-jianpan (1).png"; sourceTree = "<group>"; };
+		17C781CE1CDB09B4009DE145 /* iconfont-jikediancanicon09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-jikediancanicon09.png"; sourceTree = "<group>"; };
+		17C781CF1CDB09B4009DE145 /* iconfont-yuyin (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-yuyin (1).png"; sourceTree = "<group>"; };
+		17C781D01CDB09B4009DE145 /* pictureImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pictureImg.png; sourceTree = "<group>"; };
+		17C781D11CDB09B4009DE145 /* send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = send.png; sourceTree = "<group>"; };
+		17C781D91CDB0E63009DE145 /* ICEChatRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEChatRoom.h; sourceTree = "<group>"; };
+		17C781DA1CDB0E63009DE145 /* ICEChatRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEChatRoom.m; sourceTree = "<group>"; };
+		17C781DC1CDB34EE009DE145 /* ICEMessageBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEMessageBaseCell.h; sourceTree = "<group>"; };
+		17C781DD1CDB34EE009DE145 /* ICEMessageBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEMessageBaseCell.m; sourceTree = "<group>"; };
+		17C781E51CDB3801009DE145 /* ICEMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEMessageModel.h; sourceTree = "<group>"; };
+		17C781E61CDB3801009DE145 /* ICEMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEMessageModel.m; sourceTree = "<group>"; };
 		17D7042A1CCDF40E009CA7C0 /* ICEGitSet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICEGitSet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D7042E1CCDF40E009CA7C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		17D704301CCDF40E009CA7C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -124,8 +150,8 @@
 		17A302D41CDAF48E007257B5 /* ICEChatRoom */ = {
 			isa = PBXGroup;
 			children = (
-				17A302D61CDAF48E007257B5 /* ICEChatRoom.h */,
-				17A302D71CDAF48E007257B5 /* ICEChatRoom.m */,
+				17C781D91CDB0E63009DE145 /* ICEChatRoom.h */,
+				17C781DA1CDB0E63009DE145 /* ICEChatRoom.m */,
 				17A302D81CDAF48E007257B5 /* ICEMessageListView.h */,
 				17A302D91CDAF48E007257B5 /* ICEMessageListView.m */,
 				17A302DA1CDAF48E007257B5 /* InputView */,
@@ -155,6 +181,10 @@
 		17A302DD1CDAF48E007257B5 /* messageCell */ = {
 			isa = PBXGroup;
 			children = (
+				17C781DC1CDB34EE009DE145 /* ICEMessageBaseCell.h */,
+				17C781DD1CDB34EE009DE145 /* ICEMessageBaseCell.m */,
+				179CB8F31CDC2E1C0069DA5B /* ICEMessageContentView.h */,
+				179CB8F41CDC2E1C0069DA5B /* ICEMessageContentView.m */,
 			);
 			path = messageCell;
 			sourceTree = "<group>";
@@ -162,8 +192,33 @@
 		17A302DE1CDAF48E007257B5 /* messageModel */ = {
 			isa = PBXGroup;
 			children = (
+				17C781E51CDB3801009DE145 /* ICEMessageModel.h */,
+				17C781E61CDB3801009DE145 /* ICEMessageModel.m */,
 			);
 			path = messageModel;
+			sourceTree = "<group>";
+		};
+		17A302E21CDAF7FD007257B5 /* KeyboardNotifaction */ = {
+			isa = PBXGroup;
+			children = (
+				17A302E31CDAF7FD007257B5 /* ICEKeyboardNotifaction.h */,
+				17A302E41CDAF7FD007257B5 /* ICEKeyboardNotifaction.m */,
+			);
+			path = KeyboardNotifaction;
+			sourceTree = "<group>";
+		};
+		17C781CA1CDB09B4009DE145 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				17C781CB1CDB09B4009DE145 /* camera.png */,
+				17C781CC1CDB09B4009DE145 /* default_photoM1@2x.png */,
+				17C781CD1CDB09B4009DE145 /* iconfont-jianpan (1).png */,
+				17C781CE1CDB09B4009DE145 /* iconfont-jikediancanicon09.png */,
+				17C781CF1CDB09B4009DE145 /* iconfont-yuyin (1).png */,
+				17C781D01CDB09B4009DE145 /* pictureImg.png */,
+				17C781D11CDB09B4009DE145 /* send.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		17D704211CCDF40E009CA7C0 = {
@@ -189,6 +244,8 @@
 			children = (
 				17D704451CCDFA3F009CA7C0 /* ICECategory */,
 				17A302D41CDAF48E007257B5 /* ICEChatRoom */,
+				17C781CA1CDB09B4009DE145 /* images */,
+				17A302E21CDAF7FD007257B5 /* KeyboardNotifaction */,
 				17D704301CCDF40E009CA7C0 /* AppDelegate.h */,
 				17D704311CCDF40E009CA7C0 /* AppDelegate.m */,
 				17D704331CCDF40E009CA7C0 /* ViewController.h */,
@@ -356,8 +413,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17C781D71CDB09B4009DE145 /* pictureImg.png in Resources */,
+				17C781D81CDB09B4009DE145 /* send.png in Resources */,
+				17C781D51CDB09B4009DE145 /* iconfont-jikediancanicon09.png in Resources */,
 				17D7043D1CCDF40E009CA7C0 /* LaunchScreen.storyboard in Resources */,
 				17D7043A1CCDF40E009CA7C0 /* Assets.xcassets in Resources */,
+				17C781D31CDB09B4009DE145 /* default_photoM1@2x.png in Resources */,
+				17C781D41CDB09B4009DE145 /* iconfont-jianpan (1).png in Resources */,
+				17C781D21CDB09B4009DE145 /* camera.png in Resources */,
+				17C781D61CDB09B4009DE145 /* iconfont-yuyin (1).png in Resources */,
 				17D704381CCDF40E009CA7C0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +487,7 @@
 				17D704771CCDFA3F009CA7C0 /* NSDate+ICEAdd.m in Sources */,
 				17D704861CCDFA3F009CA7C0 /* UIImage+ICEAdd.m in Sources */,
 				17D704801CCDFA3F009CA7C0 /* UIFont+ICEAdd.m in Sources */,
+				17A302E51CDAF7FD007257B5 /* ICEKeyboardNotifaction.m in Sources */,
 				17D7047F1CCDFA3F009CA7C0 /* UIApplication+ICEAdd.m in Sources */,
 				17D7047D1CCDFA3F009CA7C0 /* NSString+ICEAdd.m in Sources */,
 				17D7047C1CCDFA3F009CA7C0 /* NSObject+YYAddForKVO.m in Sources */,
@@ -432,18 +497,21 @@
 				17D704791CCDFA3F009CA7C0 /* NSFileManager+ICEAdd.m in Sources */,
 				17D704321CCDF40E009CA7C0 /* AppDelegate.m in Sources */,
 				17D7048A1CCDFA3F009CA7C0 /* UIView+ICETapAdd.m in Sources */,
+				17C781DB1CDB0E63009DE145 /* ICEChatRoom.m in Sources */,
 				17D704881CCDFA3F009CA7C0 /* UITableView+ICEAdd.m in Sources */,
 				17D704781CCDFA3F009CA7C0 /* NSDictionary+ICEAdd.m in Sources */,
 				17A302E11CDAF48E007257B5 /* ICEInputView.m in Sources */,
 				17D7047B1CCDFA3F009CA7C0 /* NSObject+ICEBlock.m in Sources */,
 				17D704851CCDFA3F009CA7C0 /* UIGestureRecognizer+ICEAdd.m in Sources */,
 				17D704821CCDFA3F009CA7C0 /* UIButton+ICEBlock.m in Sources */,
-				17A302DF1CDAF48E007257B5 /* ICEChatRoom.m in Sources */,
 				17D704761CCDFA3F009CA7C0 /* NSArray+ICEAdd.m in Sources */,
+				17C781DE1CDB34EE009DE145 /* ICEMessageBaseCell.m in Sources */,
 				17D7042F1CCDF40E009CA7C0 /* main.m in Sources */,
 				17A302E01CDAF48E007257B5 /* ICEMessageListView.m in Sources */,
 				17D704751CCDFA3F009CA7C0 /* Foundation+Log.m in Sources */,
 				17D7047A1CCDFA3F009CA7C0 /* NSObject+ICEAdd.m in Sources */,
+				17C781E71CDB3801009DE145 /* ICEMessageModel.m in Sources */,
+				179CB8F51CDC2E1C0069DA5B /* ICEMessageContentView.m in Sources */,
 				17D704831CCDFA3F009CA7C0 /* UIColor+ICEAdd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

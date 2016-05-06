@@ -7,11 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "ICEKeyboardNotifaction.h"
-
+#import "ICEChatRoom.h"
 
 @interface ViewController ()
-@property (nonatomic,strong) UITextField *testview;
+
+
 
 @end
 
@@ -19,73 +19,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-   
-    _testview                 = [[UITextField alloc]initWithFrame:CGRectMake(0, 100, 320, 50)];
-    _testview.backgroundColor = [UIColor redColor];
-    [self.view addSubview:_testview];
-    
-    [ICEKeyboardNotifaction registerKeyBoardShow:self];
-    [ICEKeyboardNotifaction registerKeyBoardHide:self];
+
+    ICEChatRoom *chatView = [[ICEChatRoom alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - NAVIGATION_BAR_HEIGHT)];
+    [self.view addSubview:chatView];
+//    [chatView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(64);
+//        make.left.mas_equalTo(0);
+//        make.right.mas_equalTo(0);
+//        make.bottom.mas_equalTo(0);
+//    }];
+
 
 }
 
 - (void)viewDidDisappear:(BOOL)animated{
 
     [super viewDidDisappear:animated];
-    [ICEKeyboardNotifaction removeKeyBoardHide:self];
-    [ICEKeyboardNotifaction removekeyBoardShow:self];
-}
-
-- (void)keyboardWillShowNotification:(NSNotification *)notification
-{
-    
-    CGRect keyboardEndFrameWindow                         = [ICEKeyboardNotifaction returnKeyBoardWindow:notification];
-    
-    double keyboardTransitionDuration                     = [ICEKeyboardNotifaction returnKeyBoardDuration:notification];
-    
-    UIViewAnimationCurve keyboardTransitionAnimationCurve = [ICEKeyboardNotifaction returnKeyBoardAnimationCurve:notification];
-    
-    [UIView animateWithDuration:keyboardTransitionDuration
-                          delay:0
-                        options:(UIViewAnimationOptions)keyboardTransitionAnimationCurve << 16
-                     animations:^{
-                         CGFloat  y                     =self.view.bounds.size.height - 50;
-                         CGRect frame                   = CGRectMake(0, y, 320, 50);
-                         frame.origin.y                -= keyboardEndFrameWindow.size.height;
-                         self.testview.frame = frame;
-                     } completion:nil];
-    
     
 }
-
-- (void)keyboardWillHideNotification:(NSNotification *)notification
-{
-    CGRect keyboardEndFrameWindow                         = [ICEKeyboardNotifaction returnKeyBoardWindow:notification];
-    
-    double keyboardTransitionDuration                     = [ICEKeyboardNotifaction returnKeyBoardDuration:notification];
-    
-    UIViewAnimationCurve keyboardTransitionAnimationCurve = [ICEKeyboardNotifaction returnKeyBoardAnimationCurve:notification];
-    
-    [UIView animateWithDuration:keyboardTransitionDuration
-                          delay:0
-                        options:(UIViewAnimationOptions)keyboardTransitionAnimationCurve << 16
-                     animations:^{
-                         CGPoint cen                      = self.testview.center;
-                         cen.y                           += keyboardEndFrameWindow.size.height;
-                         self.testview.center = cen;
-                         
-                     } completion:nil];
-}
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    /**
-     *  触摸屏幕使键盘消失
-     */
-    [self.view endEditing:true];
-    
-    
-}
-
 
 
 - (void)didReceiveMemoryWarning {

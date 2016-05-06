@@ -1,13 +1,18 @@
 //
-//  ICEChatRoom.h
-//  ICEChatDemo
+//  ICEChatDemo.h
+//  ICEGitSet
 //
-//  Created by WLY on 16/5/4.
+//  Created by WLY on 16/5/5.
 //  Copyright © 2016年 ICE. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIKit/UIKit.h"
 
-@interface ICEChatRoom : UIViewController
+@interface ICEChatRoom : UIView
+
+- (instancetype)init;
+
+
+
 
 @end
