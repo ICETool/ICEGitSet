@@ -12,7 +12,6 @@
 @class ICEInputView;
 typedef void(^VoiceBtnBlock) (BOOL isVoice);
 
-typedef void (^SendMessageBlock) (ICEMessageModel *message);
 
 
 @protocol InputViewDelegate <NSObject>
@@ -29,6 +28,8 @@ typedef void (^SendMessageBlock) (ICEMessageModel *message);
  */
 - (void)inputView:(ICEInputView *)inputView withVoieMessage:(NSDictionary *)VoiceMessage;
 
+
+
 @end
 
 @interface ICEInputView : UIView
@@ -36,11 +37,6 @@ typedef void (^SendMessageBlock) (ICEMessageModel *message);
 
 @property (nonatomic, assign) id<InputViewDelegate> delegate;
 
-/**
- *  发送消息回调
- *
- *  @param message 一条消息
- */
-- (void)sendMessage:(SendMessageBlock)message;
+
 
 @end

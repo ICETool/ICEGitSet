@@ -6,10 +6,10 @@
 //  Copyright © 2016年 ICE. All rights reserved.
 //
 /**
- *  图片消息单元格
+ *  图片消息cell
  */
-#import "ICEMessageBaseCell.h"
+#import "ICEMessageCell.h"
 
-@interface ICEPickerMessageCell : ICEMessageBaseCell
+@interface ICEPickerMessageCell : ICEMessageCell
 
 @end

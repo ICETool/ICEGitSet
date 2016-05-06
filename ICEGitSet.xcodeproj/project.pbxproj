@@ -30,6 +30,7 @@
 		179CB9211CDC60BB0069DA5B /* sendBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 179CB9201CDC60BB0069DA5B /* sendBubble.png */; };
 		179CB9231CDC60D80069DA5B /* getBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 179CB9221CDC60D80069DA5B /* getBubble.png */; };
 		179CB92B1CDC65A70069DA5B /* ICEPickerMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 179CB92A1CDC65A70069DA5B /* ICEPickerMessageCell.m */; };
+		179CB92E1CDC67230069DA5B /* ICEMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 179CB92D1CDC67230069DA5B /* ICEMessageCell.m */; };
 		17A302E01CDAF48E007257B5 /* ICEMessageListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A302D91CDAF48E007257B5 /* ICEMessageListView.m */; };
 		17A302E11CDAF48E007257B5 /* ICEInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A302DC1CDAF48E007257B5 /* ICEInputView.m */; };
 		17A302E51CDAF7FD007257B5 /* ICEKeyboardNotifaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A302E41CDAF7FD007257B5 /* ICEKeyboardNotifaction.m */; };
@@ -95,6 +96,8 @@
 		179CB9261CDC642D0069DA5B /* ICEChatDemoDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEChatDemoDefine.h; sourceTree = "<group>"; };
 		179CB9291CDC65A70069DA5B /* ICEPickerMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEPickerMessageCell.h; sourceTree = "<group>"; };
 		179CB92A1CDC65A70069DA5B /* ICEPickerMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEPickerMessageCell.m; sourceTree = "<group>"; };
+		179CB92C1CDC67230069DA5B /* ICEMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEMessageCell.h; sourceTree = "<group>"; };
+		179CB92D1CDC67230069DA5B /* ICEMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEMessageCell.m; sourceTree = "<group>"; };
 		17A302D81CDAF48E007257B5 /* ICEMessageListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEMessageListView.h; sourceTree = "<group>"; };
 		17A302D91CDAF48E007257B5 /* ICEMessageListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEMessageListView.m; sourceTree = "<group>"; };
 		17A302DB1CDAF48E007257B5 /* ICEInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEInputView.h; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 			children = (
 				17C781DC1CDB34EE009DE145 /* ICEMessageBaseCell.h */,
 				17C781DD1CDB34EE009DE145 /* ICEMessageBaseCell.m */,
+				179CB92C1CDC67230069DA5B /* ICEMessageCell.h */,
+				179CB92D1CDC67230069DA5B /* ICEMessageCell.m */,
 				179CB91D1CDC39860069DA5B /* ICETextMessageCell.h */,
 				179CB91E1CDC39860069DA5B /* ICETextMessageCell.m */,
 				179CB9291CDC65A70069DA5B /* ICEPickerMessageCell.h */,
@@ -559,6 +564,7 @@
 				17D7047C1CCDFA3F009CA7C0 /* NSObject+YYAddForKVO.m in Sources */,
 				17D704811CCDFA3F009CA7C0 /* UIBarButtonItem+ICEAdd.m in Sources */,
 				17D704871CCDFA3F009CA7C0 /* UIScrollView+ICEAdd.m in Sources */,
+				179CB92E1CDC67230069DA5B /* ICEMessageCell.m in Sources */,
 				17D704351CCDF40E009CA7C0 /* ViewController.m in Sources */,
 				17D704791CCDFA3F009CA7C0 /* NSFileManager+ICEAdd.m in Sources */,
 				17D704321CCDF40E009CA7C0 /* AppDelegate.m in Sources */,

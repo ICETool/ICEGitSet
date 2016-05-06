@@ -6,14 +6,13 @@
 //  Copyright © 2016年 ICE. All rights reserved.
 //
 /**
- *  文本消息单元格
+ *  文本消息cell
  */
 
-#import <UIKit/UIKit.h>
-#import "ICEMessageBaseCell.h"
+#import "ICEMessageCell.h"
 #import "ICEMessageModel.h"
 
-@interface ICETextMessageCell : ICEMessageBaseCell
+@interface ICETextMessageCell : ICEMessageCell
 
 
 /*!
@@ -37,5 +36,7 @@
  *
  */
 + (CGSize)textMessageContentSize:(NSString *)textMessage;
+
+
 
 @end

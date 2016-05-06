@@ -26,7 +26,6 @@ static BOOL usable_image = NO;
 @property (nonatomic, strong) UITextView *inputTV;//输入框
 @property (nonatomic, strong) UIButton *voiceBtn;//语音按钮
 @property (nonatomic, strong) UIView   *voiceView;//语音视图
-@property (nonatomic, copy)   SendMessageBlock sendMessageBlock;//发送消息回调
 
 
 
