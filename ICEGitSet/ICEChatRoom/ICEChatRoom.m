@@ -14,8 +14,6 @@
 #import "ICEKeyboardNotifaction.h"
 
 
-
-
 static CGFloat keyBoard_h = 0;
 
 @interface ICEChatRoom ()<KeyBoardDlegate,InputViewDelegate>
@@ -226,4 +224,36 @@ static CGFloat keyBoard_h = 0;
     [self.messageListView addOneMessage:model1];
 
 }
+
+- (void)inputView:(ICEInputView *)inputView withVoieMessage:(NSDictionary *)VoiceMessage{
+
+    DLog(@"%@",VoiceMessage);
+    
+    
+    NSData *data = [NSData dataWithContentsOfFile:VoiceMessage[@"path"]];
+   
+    ICEMessageModel *model = [[ICEMessageModel alloc] init];
+    model.userName = @"自己";
+    model.messageFrom = MessageFromSelf;
+    model.voiceMessage.voiceURL = VoiceMessage[@"path"];
+    model.voiceMessage.voiceLengte = [VoiceMessage[@"length"] floatValue];
+    model.voiceMessage.voiceData = data;
+    model.messageType = MessageTypeVoice;
+    
+    [self.messageListView addOneMessage:model];
+    
+    ICEMessageModel *model1 = [[ICEMessageModel alloc] init];
+    model1.userName = @"自己";
+    model1.voiceMessage.voiceURL = VoiceMessage[@"path"];
+    model1.voiceMessage.voiceData = data;
+    model1.voiceMessage.voiceLengte = [VoiceMessage[@"length"] floatValue];
+    model.messageType = MessageTypeVoice;
+    model1.messageFrom = MessageFromOther;
+    model1.messageType = MessageTypeVoice;
+    
+    [self.messageListView addOneMessage:model1];
+    
+
+}
+
 @end

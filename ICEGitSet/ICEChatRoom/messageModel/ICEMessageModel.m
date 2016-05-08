@@ -27,6 +27,14 @@
     return _pickerMessage;
 }
 
+- (ICEVoiceMessageModel *)voiceMessage{
+
+    if (!_voiceMessage) {
+        _voiceMessage = [[ICEVoiceMessageModel alloc] init];
+    }
+    return _voiceMessage;
+}
+
 - (CGFloat)cellHeight{
 
     CGFloat cell_h = 5.5 * CELLSpacing;
@@ -42,7 +50,7 @@
             break;
         }
         case MessageTypeVoice: {
-            
+            content_h += 40;
             break;
         }
     }

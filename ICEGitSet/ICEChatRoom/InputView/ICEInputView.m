@@ -9,7 +9,8 @@
 #import "ICEInputView.h"
 #import "ICEChatDemoDefine.h"
 #import "ICEPickerController.h"
-
+#import "ICEMP3Recorder.h"
+#import "UUProgressHUD.h"
 
 #pragma mark - 协议是否可响应
 static BOOL usable_text = NO;
@@ -18,18 +19,22 @@ static BOOL usable_image = NO;
 
 
 
-@interface ICEInputView ()<UITextViewDelegate>
+@interface ICEInputView ()<UITextViewDelegate,MP3RecorderDelegate>
 
-@property (nonatomic, strong) UIView *myInputView;//输入视图
-@property (nonatomic, strong) UIView *addView;//辅助视图(打开相册等..)
-@property (nonatomic, strong) UITextView *inputTV;//输入框
-@property (nonatomic, strong) UIButton *voiceBtn;//语音按钮
-@property (nonatomic, strong) UIView   *voiceView;//语音视图
+@property (nonatomic, strong) UIView              *myInputView;//输入视图
+@property (nonatomic, strong) UIView              *addView;//辅助视图(打开相册等..)
+@property (nonatomic, strong) UITextView          *inputTV;//输入框
+@property (nonatomic, strong) UIButton            *voiceBtn;//语音按钮
+@property (nonatomic, strong) UIButton            *voiceView;//语音视图
 
-@property (nonatomic,   copy)   AddViewBlock addViewBlock;//显示和隐藏辅助视图时的回调
+@property (nonatomic,   copy) AddViewBlock        addViewBlock;//显示和隐藏辅助视图时的回调
 
 
 @property (nonatomic, strong) ICEPickerController *picker;//照片获取器
+@property (nonatomic, strong) ICEMP3Recorder      *recorder;//录音
+
+
+
 
 @end
 
@@ -68,6 +73,14 @@ static BOOL usable_image = NO;
     return _picker;
 }
 
+- (ICEMP3Recorder *)recorder{
+
+    if (!_recorder) {
+        _recorder = [[ICEMP3Recorder alloc] initWithDelegate:self];
+    }
+    return _recorder;
+}
+
 - (UITextView *)inputTV{
 
     if (!_inputTV) {
@@ -93,6 +106,10 @@ static BOOL usable_image = NO;
         
         [_stateBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^(UIButton *button) {
             _stateBtn.selected = !_stateBtn.selected;
+            if (_stateBtn.selected) {
+                self.voiceBtn.selected = YES;
+                self.voiceView.hidden = YES;
+            }
             if (self.addViewBlock) {
                 self.addViewBlock(_stateBtn.selected);
             }
@@ -113,37 +130,78 @@ static BOOL usable_image = NO;
         [_voiceBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^(UIButton *button) {
             _voiceBtn. selected = !_voiceBtn.selected;
             if (!_voiceBtn.selected ) {
+                [self.voiceView resignFirstResponder];
                 self.voiceView.hidden = YES;
                 [self.inputTV becomeFirstResponder];
             }else{
+                [self.voiceView becomeFirstResponder];
                 self.voiceView.hidden = NO;
                 [self.inputTV resignFirstResponder];
             }
         }];
+        
+        
+        
     }
     return _voiceBtn;
 }
 
-- (UIView *)voiceView{
+- (UIButton *)voiceView{
 
     if (!_voiceView) {
         
-        UIButton *voiceButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        [voiceButton setTitle:@"按住说话" forState:UIControlStateNormal];
-        [voiceButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-        voiceButton.titleLabel.font = UIFontWithSize(12);
-
-        _voiceView = voiceButton;
+        _voiceView = [UIButton buttonWithType:UIButtonTypeSystem];
+        _voiceView.backgroundColor = [UIColor whiteColor];
         _voiceView.hidden = YES;
         _voiceView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
         _voiceView.layer.borderWidth = 0.5;
         _voiceView.layer.cornerRadius = 2;
         
+        [_voiceView setTitle:@"按住说话" forState:UIControlStateNormal];
+        [_voiceView setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        _voiceView.titleLabel.font = UIFontWithSize(12);
+
+        
+        [_voiceView addTarget:self action:@selector(startRecorder:) forControlEvents:UIControlEventTouchDown];
+        
+        [_voiceView addTarget:self action:@selector(cancelRecorder:) forControlEvents:UIControlEventTouchDragExit
+         ];
+        [_voiceView addTarget:self action:@selector(cancelRecorder:) forControlEvents:UIControlEventTouchCancel];
+        [_voiceView addTarget:self action:@selector(cancelRecorder:) forControlEvents:UIControlEventTouchDragOutside];
+        
+        [_voiceView addTarget:self action:@selector(finishRecorder:) forControlEvents:UIControlEventTouchUpInside];
+    
         
     }
     return _voiceView;
 }
 
+/**
+ *  开始录音
+ */
+- (void)startRecorder:(UIButton *)button{
+
+    [self.recorder startRecorder];
+    [UUProgressHUD show];
+    [UUProgressHUD changeSubTitle:@"滑动取消"];
+}
+
+/**
+ *  取消录音
+ */
+- (void)cancelRecorder:(UIButton *)button{
+    
+    [self.recorder cancelRecorder];
+    [UUProgressHUD dismissWithSuccess:@"cancle"];
+}
+
+/**
+ *  结束录音
+ */
+- (void)finishRecorder:(UIButton *)button{
+    [self.recorder endRecorder];
+    [UUProgressHUD dismissWithSuccess:@"success"];
+}
 
 #pragma makr - subviews
 - (void)p_subviews{
@@ -338,6 +396,24 @@ static BOOL usable_image = NO;
         return YES;
     }
 }
+
+
+#pragma mark - mpsDelegate
+/**
+ *  发送语音消息
+ */
+/**  完成转换时的回调 */
+- (void)finfshConvert:(ICEMP3Recorder *)MP3Recorder
+        voiceRecorded:(NSString *)recordPath
+               length:(float)recordLength{
+
+    DLog(@"%f",recordLength);
+    if (usable_voice) {
+        [self.delegate inputView:self withVoieMessage:@{@"path" : recordPath, @"length" : @(recordLength)}];
+    }
+}
+
+
 
 
 /**

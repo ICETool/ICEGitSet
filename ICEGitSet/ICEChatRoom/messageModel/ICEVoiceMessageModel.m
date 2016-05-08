@@ -10,4 +10,14 @@
 
 @implementation ICEVoiceMessageModel
 
+- (NSData *)voiceData{
+
+    if (!_voiceData) {
+        _voiceData = [NSData data];
+    }
+    return _voiceData;
+}
+
+
+
 @end

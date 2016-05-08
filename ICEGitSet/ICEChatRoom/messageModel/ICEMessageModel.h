@@ -16,7 +16,7 @@
 #import <Foundation/Foundation.h>
 #import "ICETextMessageModel.h"
 #import "ICEPickerMessageModel.h"
-
+#import "ICEVoiceMessageModel.h"
 
 
 @interface ICEMessageModel : NSObject
@@ -56,6 +56,10 @@
  */
 @property (nonatomic, strong) ICEPickerMessageModel       *pickerMessage;
 
+/**
+ *  语音消息实体
+ */
+@property (nonatomic, strong) ICEVoiceMessageModel *voiceMessage;
 /**
  *  单元格高度
  */

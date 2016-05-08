@@ -53,6 +53,13 @@ typedef enum MessageSendSuccessStatus {
 
 #define CELL_PickerMessaegeContetn_H    150 //图片消息中图片的大小
 
+#pragma mark - 语音消息
+#define CELL_VoiceBackView_Width_MAX        200 //语音消息最大长度
+#define CELL_VoiceBackView_Width_MIN        100  //语音消息的最小长度
+#define CELL_Voice_Width            30 //语音动图 大小
+
+
+
 #pragma mark - 聊天室 视图宏定义
 
 
@@ -79,7 +86,7 @@ typedef enum MessageSendSuccessStatus {
 #define CELL_Text_Message_Font UIFontWithSize(Message_Font_Size)//文本消息 字体
 #define CELL_Name_Font         UIFontWithSize(14)               //消息发送者姓名字体
 
-
+#define CELL_Voice_Label_Font UIFontWithSize(10)//录音长度 字体
 
 #pragma mark - 默认图片
 
