@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1793B0B21CDCEC5900E546D0 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1793B0AF1CDCEC5900E546D0 /* libmp3lame.a */; };
-		1793B0BB1CDF086500E546D0 /* ICEAVAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1793B0BA1CDF086500E546D0 /* ICEAVAudioPlayer.m */; };
-		17CA64DD1CDF0C5D00CD608D /* UUProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CA64DC1CDF0C5D00CD608D /* UUProgressHUD.m */; };
-		17CA64DF1CDF112600CD608D /* Chat_record_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CA64DE1CDF112600CD608D /* Chat_record_circle.png */; };
-		17CA64E21CDF119000CD608D /* ICEMP3Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CA64E11CDF119000CD608D /* ICEMP3Recorder.m */; };
 		17D7042F1CCDF40E009CA7C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D7042E1CCDF40E009CA7C0 /* main.m */; };
 		17D704321CCDF40E009CA7C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D704311CCDF40E009CA7C0 /* AppDelegate.m */; };
 		17D704351CCDF40E009CA7C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D704341CCDF40E009CA7C0 /* ViewController.m */; };
@@ -44,15 +39,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1793B0AE1CDCEC5900E546D0 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
-		1793B0AF1CDCEC5900E546D0 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
-		1793B0B91CDF086500E546D0 /* ICEAVAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEAVAudioPlayer.h; sourceTree = "<group>"; };
-		1793B0BA1CDF086500E546D0 /* ICEAVAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEAVAudioPlayer.m; sourceTree = "<group>"; };
-		17CA64DB1CDF0C5D00CD608D /* UUProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUProgressHUD.h; sourceTree = "<group>"; };
-		17CA64DC1CDF0C5D00CD608D /* UUProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUProgressHUD.m; sourceTree = "<group>"; };
-		17CA64DE1CDF112600CD608D /* Chat_record_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chat_record_circle.png; sourceTree = "<group>"; };
-		17CA64E01CDF119000CD608D /* ICEMP3Recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEMP3Recorder.h; sourceTree = "<group>"; };
-		17CA64E11CDF119000CD608D /* ICEMP3Recorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEMP3Recorder.m; sourceTree = "<group>"; };
 		17D7042A1CCDF40E009CA7C0 /* ICEGitSet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICEGitSet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D7042E1CCDF40E009CA7C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		17D704301CCDF40E009CA7C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -120,38 +106,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				81984AE58310718D821CC880 /* libPods.a in Frameworks */,
-				1793B0B21CDCEC5900E546D0 /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1793B0A51CDCEB2A00E546D0 /* ICEVoiceProcessing */ = {
-			isa = PBXGroup;
-			children = (
-				1793B0A91CDCEC5900E546D0 /* lame_mp3 */,
-				1793B0B91CDF086500E546D0 /* ICEAVAudioPlayer.h */,
-				1793B0BA1CDF086500E546D0 /* ICEAVAudioPlayer.m */,
-				17CA64E01CDF119000CD608D /* ICEMP3Recorder.h */,
-				17CA64E11CDF119000CD608D /* ICEMP3Recorder.m */,
-				17CA64DB1CDF0C5D00CD608D /* UUProgressHUD.h */,
-				17CA64DC1CDF0C5D00CD608D /* UUProgressHUD.m */,
-				17CA64DE1CDF112600CD608D /* Chat_record_circle.png */,
-			);
-			name = ICEVoiceProcessing;
-			path = ICECategory/ICEVoiceProcessing;
-			sourceTree = "<group>";
-		};
-		1793B0A91CDCEC5900E546D0 /* lame_mp3 */ = {
-			isa = PBXGroup;
-			children = (
-				1793B0AE1CDCEC5900E546D0 /* lame.h */,
-				1793B0AF1CDCEC5900E546D0 /* libmp3lame.a */,
-			);
-			path = lame_mp3;
-			sourceTree = "<group>";
-		};
 		17D704211CCDF40E009CA7C0 = {
 			isa = PBXGroup;
 			children = (
@@ -175,7 +135,6 @@
 			children = (
 				17D704451CCDFA3F009CA7C0 /* ICECategory */,
 				17D704301CCDF40E009CA7C0 /* AppDelegate.h */,
-				1793B0A51CDCEB2A00E546D0 /* ICEVoiceProcessing */,
 				17D704311CCDF40E009CA7C0 /* AppDelegate.m */,
 				17D704331CCDF40E009CA7C0 /* ViewController.h */,
 				17D704341CCDF40E009CA7C0 /* ViewController.m */,
@@ -342,7 +301,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17CA64DF1CDF112600CD608D /* Chat_record_circle.png in Resources */,
 				17D7043D1CCDF40E009CA7C0 /* LaunchScreen.storyboard in Resources */,
 				17D7043A1CCDF40E009CA7C0 /* Assets.xcassets in Resources */,
 				17D704381CCDF40E009CA7C0 /* Main.storyboard in Resources */,
@@ -417,7 +375,6 @@
 				17D704871CCDFA3F009CA7C0 /* UIScrollView+ICEAdd.m in Sources */,
 				17D704351CCDF40E009CA7C0 /* ViewController.m in Sources */,
 				17D704791CCDFA3F009CA7C0 /* NSFileManager+ICEAdd.m in Sources */,
-				17CA64DD1CDF0C5D00CD608D /* UUProgressHUD.m in Sources */,
 				17D704321CCDF40E009CA7C0 /* AppDelegate.m in Sources */,
 				17D7048A1CCDFA3F009CA7C0 /* UIView+ICETapAdd.m in Sources */,
 				17D704881CCDFA3F009CA7C0 /* UITableView+ICEAdd.m in Sources */,
@@ -426,11 +383,9 @@
 				17D704851CCDFA3F009CA7C0 /* UIGestureRecognizer+ICEAdd.m in Sources */,
 				17D704821CCDFA3F009CA7C0 /* UIButton+ICEBlock.m in Sources */,
 				17D704761CCDFA3F009CA7C0 /* NSArray+ICEAdd.m in Sources */,
-				17CA64E21CDF119000CD608D /* ICEMP3Recorder.m in Sources */,
 				17D7042F1CCDF40E009CA7C0 /* main.m in Sources */,
 				17D704751CCDFA3F009CA7C0 /* Foundation+Log.m in Sources */,
 				17D7047A1CCDFA3F009CA7C0 /* NSObject+ICEAdd.m in Sources */,
-				1793B0BB1CDF086500E546D0 /* ICEAVAudioPlayer.m in Sources */,
 				17D704831CCDFA3F009CA7C0 /* UIColor+ICEAdd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
