@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "ICESplitController.h"
+#import "ICEMasterVC.h"
+#import "ICEdetailVC.h"
 
 
 
@@ -23,10 +26,24 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyWindow];
     
-    ViewController *vc= [[ViewController alloc] init];
-    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
-    self.window.rootViewController = navi;
+
     
+  
+    ICEMasterVC *master = [[ICEMasterVC alloc] init];
+    master.view.backgroundColor = [UIColor whiteColor];
+    
+    ICEdetailVC *detail = [[ICEdetailVC alloc] init];
+    detail.view.backgroundColor = [UIColor blueColor];
+    
+    
+    ICESplitController *splitController = [[ICESplitController alloc] initWithMasterViewController:master withDetailViewController:detail];
+    
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:splitController];
+    
+    UITabBarController *tab = [[UITabBarController alloc] init];
+    tab.viewControllers = @[navi];
+    self.window.rootViewController = tab;
+
     
     // Override point for customization after application launch.
     return YES;
