@@ -8,6 +8,7 @@
 /* 
  * 在storyboard中使用时,需要在viewWillappler中添加item
  * 纯代码中 正常添加
+ * 为万里云项目中iPad版定制两个导航栏的界面布局 仅tabbar的个数为二时 对tabbar布局做特殊处理
  */
 
 #import <UIKit/UIKit.h>

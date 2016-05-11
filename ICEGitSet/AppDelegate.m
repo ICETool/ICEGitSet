@@ -29,7 +29,7 @@
     tabbar.viewControllers = @[vc,vc1];
     ICETabbarButtonItem *homeItem = [[ICETabbarButtonItem alloc] initWithTitle:@"首页" withSelectImage:[UIImage imageNamed:@"icon_home"] withNormalImage:[UIImage imageNamed:@"icon_home_o"]];
     ICETabbarButtonItem *meItem = [[ICETabbarButtonItem alloc] initWithTitle:@"我的" withSelectImage:[UIImage imageNamed:@"icon_user"] withNormalImage:[UIImage imageNamed:@"icon_user_o"]];
-    tabbar.myTabbar.items = @[homeItem,meItem];
+    tabbar.myTabbar.myItems = @[homeItem,meItem];
     
     
     

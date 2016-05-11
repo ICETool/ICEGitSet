@@ -15,18 +15,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tabBar addSubview:self.myTabbar];
-    self.myTabbar.backgroundColor = [UIColor yellowColor];
-    [self.tabBar bringSubviewToFront:self.myTabbar];
+    self.myTabbar.barTintColor = [UIColor yellowColor];
+    [self setValue:self.myTabbar forKey:@"tabBar"];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    for (UIView *subView in self.tabBar.subviews) {
-        if (![subView isEqual:self.myTabbar]) {
-            [subView removeFromSuperview];
-        }
-    }
 }
 
 - (ICETabbar *)myTabbar{

@@ -11,8 +11,8 @@
 
 typedef void (^SelectedItemBlock) (NSInteger index);
 
-@interface ICETabbar : UIView 
-@property (nonatomic, strong) NSArray *items;
+@interface ICETabbar : UITabBar
+@property (nonatomic, strong) NSArray *myItems;
 
 /**
  *  选中回调
