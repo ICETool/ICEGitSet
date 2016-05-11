@@ -41,5 +41,28 @@
     return _myTabbar;
 }
 
+-(void)tabBar:(UITabBar*)atabBar didSelectItem:(UITabBarItem*)item
+{
+    CATransition* animation = [CATransition animation];
+    [animation setDuration:0.5f];
+    [animation setType:kCATransitionMoveIn];
+    [animation setSubtype:kCATransitionFromRight];
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
+    
+    [[self.view layer]addAnimation:animation forKey:@"switchView"];
+}
+
+- (void) touchUpInsideItemAtIndex:(NSUInteger)itemIndex
+{
+    self.selectedIndex=itemIndex;
+    
+    CATransition* animation = [CATransition animation];
+    [animation setDuration:0.5f];
+    [animation setType:kCATransitionFade];
+    [animation setSubtype:kCATransitionFromRight];
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
+    
+    [[self.view layer]addAnimation:animation forKey:@"switchView"];
+}
 
 @end

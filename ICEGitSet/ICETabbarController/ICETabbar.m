@@ -31,7 +31,6 @@
         _items = items;
         [self p_reloadBtnItem];
     }
-
 }
 - (void)setCurrentSelectedindex:(NSInteger)currentSelectedindex{
     if (_currentSelectedindex != currentSelectedindex) {
