@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17AB946E1CF6904E00AB2651 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 17AB946D1CF6904E00AB2651 /* libicucore.tbd */; };
+		17AB94701CF6905700AB2651 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17AB946F1CF6905700AB2651 /* CFNetwork.framework */; };
+		17AB94721CF6906200AB2651 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17AB94711CF6906200AB2651 /* Security.framework */; };
+		17AB94741CF6906C00AB2651 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17AB94731CF6906C00AB2651 /* Foundation.framework */; };
+		17AB94911CF690CC00AB2651 /* SRDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AB94781CF690CC00AB2651 /* SRDelegateController.m */; };
+		17AB94921CF690CC00AB2651 /* SRIOConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AB947B1CF690CC00AB2651 /* SRIOConsumer.m */; };
+		17AB94931CF690CC00AB2651 /* SRIOConsumerPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AB947D1CF690CC00AB2651 /* SRIOConsumerPool.m */; };
+		17AB94941CF690CC00AB2651 /* SRRunLoopThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AB94801CF690CC00AB2651 /* SRRunLoopThread.m */; };
+		17AB94951CF690CC00AB2651 /* SRError.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AB94831CF690CC00AB2651 /* SRError.m */; };
+		17AB94961CF690CC00AB2651 /* SRHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AB94851CF690CC00AB2651 /* SRHash.m */; };
+		17AB94971CF690CC00AB2651 /* SRURLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AB94871CF690CC00AB2651 /* SRURLUtilities.m */; };
+		17AB94981CF690CC00AB2651 /* NSRunLoop+SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AB94891CF690CC00AB2651 /* NSRunLoop+SRWebSocket.m */; };
+		17AB94991CF690CC00AB2651 /* NSURLRequest+SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AB948B1CF690CC00AB2651 /* NSURLRequest+SRWebSocket.m */; };
+		17AB949A1CF690CC00AB2651 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17AB948D1CF690CC00AB2651 /* Info.plist */; };
+		17AB949B1CF690CC00AB2651 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AB94901CF690CC00AB2651 /* SRWebSocket.m */; };
+		17AB949E1CF69F3F00AB2651 /* ICEWebsocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AB949D1CF69F3F00AB2651 /* ICEWebsocket.m */; };
 		17D7042F1CCDF40E009CA7C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D7042E1CCDF40E009CA7C0 /* main.m */; };
 		17D704321CCDF40E009CA7C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D704311CCDF40E009CA7C0 /* AppDelegate.m */; };
 		17D704351CCDF40E009CA7C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D704341CCDF40E009CA7C0 /* ViewController.m */; };
@@ -39,6 +55,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17AB946D1CF6904E00AB2651 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		17AB946F1CF6905700AB2651 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		17AB94711CF6906200AB2651 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		17AB94731CF6906C00AB2651 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		17AB94771CF690CC00AB2651 /* SRDelegateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDelegateController.h; sourceTree = "<group>"; };
+		17AB94781CF690CC00AB2651 /* SRDelegateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDelegateController.m; sourceTree = "<group>"; };
+		17AB947A1CF690CC00AB2651 /* SRIOConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRIOConsumer.h; sourceTree = "<group>"; };
+		17AB947B1CF690CC00AB2651 /* SRIOConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRIOConsumer.m; sourceTree = "<group>"; };
+		17AB947C1CF690CC00AB2651 /* SRIOConsumerPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRIOConsumerPool.h; sourceTree = "<group>"; };
+		17AB947D1CF690CC00AB2651 /* SRIOConsumerPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRIOConsumerPool.m; sourceTree = "<group>"; };
+		17AB947F1CF690CC00AB2651 /* SRRunLoopThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRunLoopThread.h; sourceTree = "<group>"; };
+		17AB94801CF690CC00AB2651 /* SRRunLoopThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRunLoopThread.m; sourceTree = "<group>"; };
+		17AB94821CF690CC00AB2651 /* SRError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRError.h; sourceTree = "<group>"; };
+		17AB94831CF690CC00AB2651 /* SRError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRError.m; sourceTree = "<group>"; };
+		17AB94841CF690CC00AB2651 /* SRHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHash.h; sourceTree = "<group>"; };
+		17AB94851CF690CC00AB2651 /* SRHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHash.m; sourceTree = "<group>"; };
+		17AB94861CF690CC00AB2651 /* SRURLUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRURLUtilities.h; sourceTree = "<group>"; };
+		17AB94871CF690CC00AB2651 /* SRURLUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRURLUtilities.m; sourceTree = "<group>"; };
+		17AB94881CF690CC00AB2651 /* NSRunLoop+SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRunLoop+SRWebSocket.h"; sourceTree = "<group>"; };
+		17AB94891CF690CC00AB2651 /* NSRunLoop+SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRunLoop+SRWebSocket.m"; sourceTree = "<group>"; };
+		17AB948A1CF690CC00AB2651 /* NSURLRequest+SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+SRWebSocket.h"; sourceTree = "<group>"; };
+		17AB948B1CF690CC00AB2651 /* NSURLRequest+SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+SRWebSocket.m"; sourceTree = "<group>"; };
+		17AB948D1CF690CC00AB2651 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17AB948E1CF690CC00AB2651 /* SocketRocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketRocket.h; sourceTree = "<group>"; };
+		17AB948F1CF690CC00AB2651 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		17AB94901CF690CC00AB2651 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		17AB949C1CF69F3F00AB2651 /* ICEWebsocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEWebsocket.h; sourceTree = "<group>"; };
+		17AB949D1CF69F3F00AB2651 /* ICEWebsocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEWebsocket.m; sourceTree = "<group>"; };
 		17D7042A1CCDF40E009CA7C0 /* ICEGitSet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICEGitSet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D7042E1CCDF40E009CA7C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		17D704301CCDF40E009CA7C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +149,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17AB94741CF6906C00AB2651 /* Foundation.framework in Frameworks */,
+				17AB94721CF6906200AB2651 /* Security.framework in Frameworks */,
+				17AB94701CF6905700AB2651 /* CFNetwork.framework in Frameworks */,
+				17AB946E1CF6904E00AB2651 /* libicucore.tbd in Frameworks */,
 				81984AE58310718D821CC880 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +160,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17AB94691CF68FBD00AB2651 /* ICEWebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				17AB94751CF690CC00AB2651 /* Internal */,
+				17AB94881CF690CC00AB2651 /* NSRunLoop+SRWebSocket.h */,
+				17AB94891CF690CC00AB2651 /* NSRunLoop+SRWebSocket.m */,
+				17AB948A1CF690CC00AB2651 /* NSURLRequest+SRWebSocket.h */,
+				17AB948B1CF690CC00AB2651 /* NSURLRequest+SRWebSocket.m */,
+				17AB948C1CF690CC00AB2651 /* Resources */,
+				17AB948E1CF690CC00AB2651 /* SocketRocket.h */,
+				17AB948F1CF690CC00AB2651 /* SRWebSocket.h */,
+				17AB94901CF690CC00AB2651 /* SRWebSocket.m */,
+			);
+			path = ICEWebSocket;
+			sourceTree = "<group>";
+		};
+		17AB94751CF690CC00AB2651 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				17AB94761CF690CC00AB2651 /* Delegate */,
+				17AB94791CF690CC00AB2651 /* IOConsumer */,
+				17AB947E1CF690CC00AB2651 /* RunLoop */,
+				17AB94811CF690CC00AB2651 /* Utilities */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		17AB94761CF690CC00AB2651 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				17AB94771CF690CC00AB2651 /* SRDelegateController.h */,
+				17AB94781CF690CC00AB2651 /* SRDelegateController.m */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		17AB94791CF690CC00AB2651 /* IOConsumer */ = {
+			isa = PBXGroup;
+			children = (
+				17AB947A1CF690CC00AB2651 /* SRIOConsumer.h */,
+				17AB947B1CF690CC00AB2651 /* SRIOConsumer.m */,
+				17AB947C1CF690CC00AB2651 /* SRIOConsumerPool.h */,
+				17AB947D1CF690CC00AB2651 /* SRIOConsumerPool.m */,
+			);
+			path = IOConsumer;
+			sourceTree = "<group>";
+		};
+		17AB947E1CF690CC00AB2651 /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				17AB947F1CF690CC00AB2651 /* SRRunLoopThread.h */,
+				17AB94801CF690CC00AB2651 /* SRRunLoopThread.m */,
+			);
+			path = RunLoop;
+			sourceTree = "<group>";
+		};
+		17AB94811CF690CC00AB2651 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				17AB94821CF690CC00AB2651 /* SRError.h */,
+				17AB94831CF690CC00AB2651 /* SRError.m */,
+				17AB94841CF690CC00AB2651 /* SRHash.h */,
+				17AB94851CF690CC00AB2651 /* SRHash.m */,
+				17AB94861CF690CC00AB2651 /* SRURLUtilities.h */,
+				17AB94871CF690CC00AB2651 /* SRURLUtilities.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		17AB948C1CF690CC00AB2651 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				17AB948D1CF690CC00AB2651 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		17D704211CCDF40E009CA7C0 = {
 			isa = PBXGroup;
 			children = (
@@ -134,10 +259,13 @@
 			isa = PBXGroup;
 			children = (
 				17D704451CCDFA3F009CA7C0 /* ICECategory */,
+				17AB94691CF68FBD00AB2651 /* ICEWebSocket */,
 				17D704301CCDF40E009CA7C0 /* AppDelegate.h */,
 				17D704311CCDF40E009CA7C0 /* AppDelegate.m */,
 				17D704331CCDF40E009CA7C0 /* ViewController.h */,
 				17D704341CCDF40E009CA7C0 /* ViewController.m */,
+				17AB949C1CF69F3F00AB2651 /* ICEWebsocket.h */,
+				17AB949D1CF69F3F00AB2651 /* ICEWebsocket.m */,
 				17D704361CCDF40E009CA7C0 /* Main.storyboard */,
 				17D704441CCDF9DA009CA7C0 /* ICEGitSet.pch */,
 				17D704391CCDF40E009CA7C0 /* Assets.xcassets */,
@@ -236,6 +364,10 @@
 		F813255F8992DAF0B88FD45E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				17AB94731CF6906C00AB2651 /* Foundation.framework */,
+				17AB94711CF6906200AB2651 /* Security.framework */,
+				17AB946F1CF6905700AB2651 /* CFNetwork.framework */,
+				17AB946D1CF6904E00AB2651 /* libicucore.tbd */,
 				786C2EE49CD3E5CD6CF8ED2B /* libPods.a */,
 			);
 			name = Frameworks;
@@ -301,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17AB949A1CF690CC00AB2651 /* Info.plist in Resources */,
 				17D7043D1CCDF40E009CA7C0 /* LaunchScreen.storyboard in Resources */,
 				17D7043A1CCDF40E009CA7C0 /* Assets.xcassets in Resources */,
 				17D704381CCDF40E009CA7C0 /* Main.storyboard in Resources */,
@@ -373,20 +506,31 @@
 				17D7047C1CCDFA3F009CA7C0 /* NSObject+YYAddForKVO.m in Sources */,
 				17D704811CCDFA3F009CA7C0 /* UIBarButtonItem+ICEAdd.m in Sources */,
 				17D704871CCDFA3F009CA7C0 /* UIScrollView+ICEAdd.m in Sources */,
+				17AB94961CF690CC00AB2651 /* SRHash.m in Sources */,
 				17D704351CCDF40E009CA7C0 /* ViewController.m in Sources */,
 				17D704791CCDFA3F009CA7C0 /* NSFileManager+ICEAdd.m in Sources */,
 				17D704321CCDF40E009CA7C0 /* AppDelegate.m in Sources */,
 				17D7048A1CCDFA3F009CA7C0 /* UIView+ICETapAdd.m in Sources */,
 				17D704881CCDFA3F009CA7C0 /* UITableView+ICEAdd.m in Sources */,
+				17AB94941CF690CC00AB2651 /* SRRunLoopThread.m in Sources */,
 				17D704781CCDFA3F009CA7C0 /* NSDictionary+ICEAdd.m in Sources */,
 				17D7047B1CCDFA3F009CA7C0 /* NSObject+ICEBlock.m in Sources */,
 				17D704851CCDFA3F009CA7C0 /* UIGestureRecognizer+ICEAdd.m in Sources */,
+				17AB949E1CF69F3F00AB2651 /* ICEWebsocket.m in Sources */,
+				17AB94921CF690CC00AB2651 /* SRIOConsumer.m in Sources */,
+				17AB94931CF690CC00AB2651 /* SRIOConsumerPool.m in Sources */,
+				17AB94991CF690CC00AB2651 /* NSURLRequest+SRWebSocket.m in Sources */,
 				17D704821CCDFA3F009CA7C0 /* UIButton+ICEBlock.m in Sources */,
 				17D704761CCDFA3F009CA7C0 /* NSArray+ICEAdd.m in Sources */,
+				17AB94981CF690CC00AB2651 /* NSRunLoop+SRWebSocket.m in Sources */,
+				17AB94911CF690CC00AB2651 /* SRDelegateController.m in Sources */,
 				17D7042F1CCDF40E009CA7C0 /* main.m in Sources */,
 				17D704751CCDFA3F009CA7C0 /* Foundation+Log.m in Sources */,
+				17AB94951CF690CC00AB2651 /* SRError.m in Sources */,
 				17D7047A1CCDFA3F009CA7C0 /* NSObject+ICEAdd.m in Sources */,
+				17AB949B1CF690CC00AB2651 /* SRWebSocket.m in Sources */,
 				17D704831CCDFA3F009CA7C0 /* UIColor+ICEAdd.m in Sources */,
+				17AB94971CF690CC00AB2651 /* SRURLUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +649,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ICEGitSet/ICEGitSet.pch";
 				INFOPLIST_FILE = ICEGitSet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -524,6 +669,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ICEGitSet/ICEGitSet.pch";
 				INFOPLIST_FILE = ICEGitSet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
